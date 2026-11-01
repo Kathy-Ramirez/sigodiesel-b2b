@@ -1,111 +1,489 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f5f9;
+    color: #263445;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* MENÚ LATERAL */
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background-color: #142b49;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
+.sidebar-logo {
+    padding: 28px 22px;
+    border-bottom: 1px solid #30445e;
+}
+
+.sidebar-logo h2 {
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.sidebar-logo span {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #a9bdd4;
+    letter-spacing: 2px;
+}
+
+.sidebar-menu {
+    padding: 25px 14px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.menu-titulo {
+    font-size: 11px;
+    color: #91a7c0;
+    margin: 0 10px 15px;
+    font-weight: bold;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 12px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #d5dfeb;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #24476d;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 18px;
+    border-top: 1px solid #30445e;
+}
+
+.usuario-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 17px;
+}
+
+.usuario-info strong {
+    font-size: 14px;
+}
+
+.usuario-info span {
+    font-size: 12px;
+    color: #a9bdd4;
+}
+
+.btn-cerrar-sesion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px;
+    background-color: #b83b43;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #982d35;
+}
+
+/* CONTENIDO PRINCIPAL */
+.admin-contenido {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 35px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 27px;
+    margin-bottom: 9px;
+    color: #142b49;
+}
+
+.dashboard-header p {
+    color: #748195;
+    font-size: 14px;
+}
+
+.dashboard-contenido {
+    background-color: white;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-contenido h2 {
+    margin-bottom: 15px;
+    font-size: 19px;
+    color: #142b49;
+}
+
+.dashboard-contenido p {
+    color: #748195;
+    line-height: 1.6;
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 210px;
+    }
+
+    .admin-contenido {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 20px;
+    }
+}
+
+
+/* --------------------------------------------
+panel de trasportirsta .admin-contenido
+-------------------------------------------- */
+
+
+/* Módulo Transportistas */
+/* 
+.texto-secundario {
+    display: block;
+    margin-top: 4px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.mensaje-error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    color: #991b1b;
+    background: #fee2e2;
+    border-radius: 8px;
+}
+
+.mensaje-error button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mensaje-cargando,
+.tabla-vacia {
+    padding: 25px;
+    text-align: center;
+    color: #718096;
+}
+
+.empresas-resumen {
+    display: flex;
+    gap: 25px;
+    margin: 15px 0;
+    color: #475569;
+}
+
+.modal-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.55);
+    overflow-y: auto;
+}
+
+.modal-empresa {
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.modal-empresa-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.modal-empresa-encabezado h2 {
+    margin: 0 0 6px;
+    color: #142b49;
+}
+
+.modal-empresa-encabezado p {
+    margin: 0;
+    color: #718096;
+}
+
+.btn-cerrar-modal {
+    border: none;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.formulario-empresa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.asignacion-formulario {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.asignacion-formulario .campo-empresa {
+    flex: 1;
+}
+
+.lista-asignaciones h3 {
+    color: #142b49;
+    font-size: 16px;
+}
+
+.asignacion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.asignacion-item > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #334155;
+}
+
+.btn-desasignar {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #fee2e2;
+    color: #991b1b;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .formulario-empresa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .asignacion-formulario {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .empresas-resumen {
+        flex-direction: column;
+        gap: 6px;
+    }
+} */
+
+
+
+
+
+.encabezado-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.encabezado-modulo h1 {
+    margin: 0 0 6px;
+}
+
+.encabezado-modulo p {
+    margin: 0;
+    color: #64748b;
+}
+
+.filtros-cupos {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px;
     margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.campo-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 190px;
+    flex: 1;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.campo-filtro label,
+.campo-completo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.campo-filtro input,
+.campo-filtro select,
+.campo-completo input,
+.campo-completo select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font: inherit;
+}
+
+.campo-completo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-completo small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.resumen-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resumen-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resumen-item span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.resumen-item strong {
+    font-size: 19px;
+}
+
+.celda-vehiculo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.btn-secundario {
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #334155;
+    cursor: pointer;
+}
+
+.btn-secundario:hover {
+    background: #f1f5f9;
+}
+
+.btn-principal:disabled,
+.btn-secundario:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mensaje-exito {
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    color: #166534;
+    background: #dcfce7;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .encabezado-modulo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filtros-cupos {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .campo-filtro {
+        width: 100%;
+    }
+
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
 }

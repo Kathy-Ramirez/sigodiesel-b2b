@@ -2,11 +2,24 @@ from flask import Flask, jsonify
 from sqlalchemy import text
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
-
+from flask_cors import CORS
 from config import Config
 from extensions import db, bcrypt
 
 app = Flask(__name__)
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+            ]
+        }
+    },
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+)
 app.config.from_object(Config)
 
 db.init_app(app)

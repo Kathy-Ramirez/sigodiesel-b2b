@@ -1,0 +1,147 @@
+.encabezado-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.encabezado-modulo h1 {
+    margin: 0 0 6px;
+}
+
+.encabezado-modulo p {
+    margin: 0;
+    color: #64748b;
+}
+
+.filtros-cupos {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px;
+    margin: 20px 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.campo-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 190px;
+    flex: 1;
+}
+
+.campo-filtro label,
+.campo-completo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.campo-filtro input,
+.campo-filtro select,
+.campo-completo input,
+.campo-completo select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font: inherit;
+}
+
+.campo-completo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo-completo small {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.resumen-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.resumen-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resumen-item span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.resumen-item strong {
+    font-size: 19px;
+}
+
+.celda-vehiculo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.acciones-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.btn-secundario {
+    padding: 10px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #334155;
+    cursor: pointer;
+}
+
+.btn-secundario:hover {
+    background: #f1f5f9;
+}
+
+.btn-principal:disabled,
+.btn-secundario:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mensaje-exito {
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    color: #166534;
+    background: #dcfce7;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .encabezado-modulo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filtros-cupos {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .campo-filtro {
+        width: 100%;
+    }
+
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
+}

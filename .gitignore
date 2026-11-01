@@ -18,3 +18,7 @@ build/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Archivos de registro y pruebas
+*.log
+.pytest_cache/
