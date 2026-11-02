@@ -5,7 +5,6 @@ import AdminLayout from "../layouts/AdminLayout";
 import api from "../services/api";
 import "../estilos/trasportistas.css";
 import "../estilos/admin-modules.css";
-import "../estilos/transportistas-page.css";
 
 
 function Transportistas() {

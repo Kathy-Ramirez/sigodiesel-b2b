@@ -1,1 +1,638 @@
-.vehiculos-pagina{width:100%;max-width:1380px;margin:0 auto}.vehiculos-encabezado{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin:0 0 26px}.vehiculos-encabezado>div{min-width:0}.vehiculos-encabezado h1{margin:0 0 8px;font-size:30px;color:#f1f5f9}.vehiculos-encabezado p{margin:0;color:#8fa5b8;font-size:14px;line-height:1.5}.vehiculos-encabezado>.btn-nueva-empresa{flex:0 0 auto;margin-left:auto;align-self:flex-start;justify-content:center;min-height:43px;padding:12px 18px;border:1px solid #2b9bd0;border-radius:9px;background:linear-gradient(135deg,#1d8bc2,#166a9b);box-shadow:0 8px 20px #0d547533;color:#fff;font-size:13px;font-weight:700;white-space:nowrap}.vehiculos-encabezado>.btn-nueva-empresa:hover{background:linear-gradient(135deg,#2a9ed0,#1b7bad);box-shadow:0 10px 24px #0d547555;transform:translateY(-1px)}.vehiculos-pagina>.empresas-resumen{display:flex;align-items:center;width:260px;min-height:94px;margin:0 0 22px;padding:19px 21px;border:1px solid #24465e;border-radius:13px;background:linear-gradient(145deg,#172f45,#122638);box-shadow:0 8px 22px #06152255;color:#55c4ed}.vehiculos-pagina>.empresas-resumen svg{flex:0 0 auto}.vehiculos-pagina>.empresas-resumen span{display:block;margin-bottom:5px;color:#8faabd;font-size:12px}.vehiculos-pagina>.empresas-resumen h2{margin:0;color:#f4f9fc;font-size:27px;line-height:1}.vehiculos-pagina>.empresas-tabla-contenedor{padding:0;overflow:hidden;border:1px solid #24465e;border-radius:14px;background:#122438;box-shadow:0 10px 28px #06152266}.vehiculos-pagina>.empresas-tabla-contenedor>.empresas-tabla-encabezado{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:21px 24px;border-bottom:1px solid #213e55;background:#142b40}.vehiculos-pagina .empresas-tabla-encabezado h2{margin:0;color:#e9f2f7;font-size:17px}.vehiculos-pagina .buscador-empresas{width:min(100%,340px);background:#0d1d2d;border-color:#2b4b62;border-radius:9px}.vehiculos-pagina .buscador-empresas input{width:100%;color:#e5eef5}.vehiculos-pagina .tabla-empresas{min-width:850px}.vehiculos-pagina .tabla-empresas th{padding:13px 16px;background:#102235;color:#91aabd;font-size:11px;letter-spacing:.04em;text-transform:uppercase}.vehiculos-pagina .tabla-empresas td{padding:15px 16px;color:#bdd0dc}.vehiculos-pagina .tabla-empresas td:nth-child(2){color:#eaf5fa;font-weight:700}.vehiculos-pagina .acciones-empresa{display:flex;align-items:center;gap:7px}.vehiculos-pagina .acciones-empresa button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:33px;padding:7px 10px;border-radius:7px;font-size:11px;font-weight:700;white-space:nowrap;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}.vehiculos-pagina .acciones-empresa button:hover{transform:translateY(-1px);box-shadow:0 5px 12px #06152266}.vehiculos-pagina .btn-editar-empresa{border:1px solid #2c6d8f;background:#173f59;color:#77caf0}.vehiculos-pagina .btn-editar-empresa:hover{border-color:#3d9dcc;background:#205675}.vehiculos-pagina .btn-desactivar-empresa{border:1px solid #75404b;background:#512d38;color:#ffabb1}.vehiculos-pagina .btn-desactivar-empresa:hover{background:#663642}.vehiculos-pagina .btn-activar-empresa{border:1px solid #28694f;background:#164b3b;color:#78dfa8}.vehiculos-pagina .btn-activar-empresa:hover{background:#1c604a}.vehiculos-pagina .tabla-empresas tbody tr:hover{background:#183149}.vehiculos-pagina .formulario-empresa-contenedor{z-index:1100}@media(max-width:700px){.vehiculos-encabezado{align-items:stretch;flex-direction:column}.vehiculos-encabezado>.btn-nueva-empresa{width:100%;margin-left:0}.vehiculos-pagina>.empresas-resumen{width:100%}.vehiculos-pagina>.empresas-tabla-contenedor>.empresas-tabla-encabezado{align-items:stretch;flex-direction:column}.vehiculos-pagina .buscador-empresas{width:100%}.vehiculos-pagina .acciones-empresa{align-items:stretch;flex-direction:column}.vehiculos-pagina .acciones-empresa button{width:100%}}
+
+/* =====================================================
+   MÓDULO VEHÍCULOS
+   TEMA OSCURO CORPORATIVO
+   ===================================================== */
+
+
+/* =====================================================
+   1. PÁGINA PRINCIPAL
+   ===================================================== */
+
+.vehiculos-pagina {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   2. ENCABEZADO
+   ===================================================== */
+
+.vehiculos-encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin: 0 0 26px;
+}
+
+.vehiculos-encabezado > div {
+    min-width: 0;
+}
+
+.vehiculos-encabezado h1 {
+    margin: 0 0 8px;
+
+    color: #f1f5f9;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.vehiculos-encabezado p {
+    margin: 0;
+
+    color: #8fa5b8;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   3. BOTÓN NUEVO VEHÍCULO
+   ===================================================== */
+
+.vehiculos-encabezado > .btn-nueva-empresa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    flex: 0 0 auto;
+    align-self: flex-start;
+
+    min-height: 43px;
+    padding: 12px 18px;
+    margin-left: auto;
+
+    border: 1px solid #2b9bd0;
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #1d8bc2,
+        #166a9b
+    );
+
+    box-shadow: 0 8px 20px #0d547533;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.vehiculos-encabezado > .btn-nueva-empresa:hover {
+    background: linear-gradient(
+        135deg,
+        #2a9ed0,
+        #1b7bad
+    );
+
+    box-shadow: 0 10px 24px #0d547555;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   4. TARJETA DE RESUMEN
+   ===================================================== */
+
+.vehiculos-pagina > .empresas-resumen {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 260px;
+    min-height: 94px;
+
+    padding: 19px 21px;
+    margin: 0 0 22px;
+
+    border: 1px solid #24465e;
+    border-radius: 13px;
+
+    background: linear-gradient(
+        145deg,
+        #172f45,
+        #122638
+    );
+
+    box-shadow: 0 8px 22px #06152255;
+
+    color: #55c4ed;
+}
+
+.vehiculos-pagina > .empresas-resumen svg {
+    flex: 0 0 auto;
+}
+
+.vehiculos-pagina > .empresas-resumen span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #8faabd;
+    font-size: 12px;
+}
+
+.vehiculos-pagina > .empresas-resumen h2 {
+    margin: 0;
+
+    color: #f4f9fc;
+    font-size: 27px;
+    line-height: 1;
+}
+
+
+/* =====================================================
+   5. CONTENEDOR DE TABLA
+   ===================================================== */
+
+.vehiculos-pagina > .empresas-tabla-contenedor {
+    width: 100%;
+    padding: 0;
+
+    overflow-x: auto;
+
+    border: 1px solid #24465e;
+    border-radius: 14px;
+
+    background: #122438;
+
+    box-shadow: 0 10px 28px #06152266;
+}
+
+
+/* =====================================================
+   6. ENCABEZADO DE TABLA
+   ===================================================== */
+
+.vehiculos-pagina > .empresas-tabla-contenedor
+> .empresas-tabla-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 21px 24px;
+
+    border-bottom: 1px solid #213e55;
+
+    background: #142b40;
+}
+
+.vehiculos-pagina .empresas-tabla-encabezado h2 {
+    margin: 0;
+
+    color: #e9f2f7;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   7. BUSCADOR
+   ===================================================== */
+
+.vehiculos-pagina .buscador-empresas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: min(100%, 340px);
+    padding: 10px 13px;
+
+    border: 1px solid #2b4b62;
+    border-radius: 9px;
+
+    background: #0d1d2d;
+    color: #7791a5;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.vehiculos-pagina .buscador-empresas:focus-within {
+    border-color: #3d9dcc;
+    box-shadow: 0 0 0 3px #2b9bd022;
+}
+
+.vehiculos-pagina .buscador-empresas input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #e5eef5;
+
+    font-size: 13px;
+}
+
+.vehiculos-pagina .buscador-empresas input::placeholder {
+    color: #6f879b;
+}
+
+
+/* =====================================================
+   8. TABLA DE VEHÍCULOS
+   ===================================================== */
+
+.vehiculos-pagina .tabla-empresas {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.vehiculos-pagina .tabla-empresas th {
+    padding: 13px 16px;
+
+    background: #102235;
+    color: #91aabd;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.vehiculos-pagina .tabla-empresas td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #21384c;
+
+    color: #bdd0dc;
+    font-size: 13px;
+}
+
+.vehiculos-pagina .tabla-empresas td:nth-child(2) {
+    color: #eaf5fa;
+    font-weight: 700;
+}
+
+.vehiculos-pagina .tabla-empresas tbody tr {
+    transition: background 0.2s ease;
+}
+
+.vehiculos-pagina .tabla-empresas tbody tr:hover {
+    background: #183149;
+}
+
+.vehiculos-pagina .tabla-empresas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   9. BOTONES DE ACCIONES
+   SOLO ICONOS: EDITAR / ACTIVAR / DESACTIVAR
+   ===================================================== */
+
+.vehiculos-pagina .acciones-empresa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.vehiculos-pagina .acciones-empresa button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 34px;
+    min-width: 36px;
+    min-height: 34px;
+
+    padding: 7px;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    font-size: 0;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Iconos */
+
+.vehiculos-pagina .acciones-empresa button svg {
+    display: block;
+
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+}
+
+/* Hover general */
+
+.vehiculos-pagina .acciones-empresa button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px #06152266;
+}
+
+
+/* EDITAR */
+
+.vehiculos-pagina .btn-editar-empresa {
+    border-color: #2c6d8f;
+    background: #173f59;
+    color: #77caf0;
+}
+
+.vehiculos-pagina .btn-editar-empresa:hover {
+    border-color: #3d9dcc;
+    background: #205675;
+}
+
+
+/* DESACTIVAR */
+
+.vehiculos-pagina .btn-desactivar-empresa {
+    border-color: #75404b;
+    background: #512d38;
+    color: #ffabb1;
+}
+
+.vehiculos-pagina .btn-desactivar-empresa:hover {
+    background: #663642;
+}
+
+
+/* ACTIVAR */
+
+.vehiculos-pagina .btn-activar-empresa {
+    border-color: #28694f;
+    background: #164b3b;
+    color: #78dfa8;
+}
+
+.vehiculos-pagina .btn-activar-empresa:hover {
+    background: #1c604a;
+}
+
+
+/* Foco y accesibilidad */
+
+.vehiculos-pagina .acciones-empresa button:focus-visible {
+    outline: 2px solid #77caf0;
+    outline-offset: 3px;
+}
+
+.vehiculos-pagina .acciones-empresa button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   10. MENSAJES
+   ===================================================== */
+
+.mensaje-empresa {
+    padding: 13px 16px;
+    margin-bottom: 20px;
+
+    border: 1px solid #27694f;
+    border-radius: 8px;
+
+    background: #164b3b;
+    color: #78dfa8;
+}
+
+.mensaje-empresa.error {
+    border-color: #75404b;
+    background: #512d38;
+    color: #ffabb1;
+}
+
+.mensaje-error {
+    padding: 12px 16px;
+
+    border: 1px solid #75404b;
+    border-radius: 8px;
+
+    background: #512d38;
+    color: #ffabb1;
+}
+
+
+/* =====================================================
+   11. MODAL / FORMULARIO DE VEHÍCULOS
+   SE CONSERVA SU ESTRUCTURA ORIGINAL
+   ===================================================== */
+
+.vehiculos-pagina .formulario-empresa-contenedor {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+
+    display: grid;
+    place-items: center;
+
+    padding: 24px;
+    margin: 0;
+
+    background: #061522bb;
+
+    overflow-y: auto;
+}
+
+.vehiculos-pagina .formulario-empresa {
+    width: min(100%, 600px);
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border: 1px solid #24465e;
+    border-radius: 16px;
+
+    background: #122638;
+
+    box-shadow: 0 25px 70px #06152299;
+}
+
+.vehiculos-pagina .formulario-empresa-titulo {
+    margin-bottom: 22px;
+}
+
+.vehiculos-pagina .formulario-empresa-titulo h2 {
+    color: #e9f2f7;
+    font-size: 21px;
+}
+
+.vehiculos-pagina .formulario-empresa form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+}
+
+.vehiculos-pagina .formulario-empresa .campo-empresa {
+    grid-column: span 2;
+}
+
+.vehiculos-pagina .formulario-empresa .acciones-formulario {
+    grid-column: span 2;
+}
+
+
+/* Campos */
+
+.vehiculos-pagina .formulario-empresa input,
+.vehiculos-pagina .formulario-empresa select {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+
+    border: 1px solid #2b4b62;
+    border-radius: 7px;
+
+    background: #0d1d2d;
+    color: #e5eef5;
+}
+
+.vehiculos-pagina .formulario-empresa input:focus,
+.vehiculos-pagina .formulario-empresa select:focus {
+    outline: none;
+    border-color: #3d9dcc;
+    box-shadow: 0 0 0 3px #2b9bd022;
+}
+
+
+/* =====================================================
+   12. RESPONSIVE - TABLETS
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .vehiculos-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vehiculos-pagina > .empresas-tabla-contenedor
+    > .empresas-tabla-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vehiculos-pagina .buscador-empresas {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =====================================================
+   13. RESPONSIVE - MÓVILES
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .vehiculos-encabezado {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .vehiculos-encabezado > .btn-nueva-empresa {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .vehiculos-pagina > .empresas-resumen {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .vehiculos-pagina > .empresas-tabla-contenedor
+    > .empresas-tabla-encabezado {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .vehiculos-pagina .buscador-empresas {
+        width: 100%;
+    }
+
+    .vehiculos-pagina .acciones-empresa {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   14. RESPONSIVE - FORMULARIO
+   ===================================================== */
+
+@media (max-width: 620px) {
+
+    .vehiculos-pagina .formulario-empresa-contenedor {
+        padding: 14px;
+    }
+
+    .vehiculos-pagina .formulario-empresa {
+        width: 100%;
+        max-height: calc(100vh - 28px);
+
+        padding: 23px;
+
+        box-sizing: border-box;
+    }
+
+    .vehiculos-pagina .formulario-empresa form {
+        display: block;
+    }
+
+    .vehiculos-pagina .formulario-empresa .acciones-formulario {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 15px;
+    }
+
+    .vehiculos-pagina .formulario-empresa .acciones-formulario button {
+        width: 100%;
+    }
+
+    .vehiculos-pagina .formulario-empresa .campo-empresa {
+        margin-bottom: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   FIN DEL MÓDULO VEHÍCULOS
+   ===================================================== */

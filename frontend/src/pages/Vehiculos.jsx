@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import { Search, Truck, Plus, X, Pencil, Power, } from "lucide-react";
 import api from "../services/api";
 import AdminLayout from "../layouts/AdminLayout";
-import "../estilos/empresas.css";
-import "../estilos/crud-admin.css";
 import "../estilos/vehiculos.css";
-import "../estilos/admin-modules.css";
 
 function Vehiculos() {
     const [vehiculos, setVehiculos] = useState([]);

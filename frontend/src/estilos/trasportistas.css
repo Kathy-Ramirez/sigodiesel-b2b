@@ -1,9 +1,9 @@
-/* --------------------------------------------
-panel de trasportirsta .admin-contenido
--------------------------------------------- */
 
+/* =====================================================
+   MÓDULO TRANSPORTISTAS / EMPRESAS
+   ===================================================== */
 
-/* Módulo Transportistas */
+/* ---------- Textos y mensajes ---------- */
 
 .texto-secundario {
     display: block;
@@ -37,12 +37,161 @@ panel de trasportirsta .admin-contenido
     color: #718096;
 }
 
-.empresas-resumen {
+/* ---------- Página de empresas ---------- */
+
+.empresas-pagina {
     display: flex;
-    gap: 25px;
-    margin: 15px 0;
-    color: #475569;
+    flex-direction: column;
 }
+
+.empresas-pagina > .empresas-encabezado {
+    order: 1;
+}
+
+.empresas-pagina > .mensaje-error {
+    order: 2;
+}
+
+.empresas-pagina > .empresas-resumen {
+    order: 3;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    width: 100%;
+    min-height: 94px;
+    margin: 0 0 22px;
+    padding: 20px 24px;
+    border: 1px solid #24465e;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #172f45, #122638);
+    box-shadow: 0 8px 22px #06152255;
+    color: #bcd0dc;
+}
+
+.empresas-pagina > .empresas-resumen span {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: #8faabd;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.empresas-pagina > .empresas-resumen strong {
+    color: #f4f9fc;
+    font-size: 25px;
+}
+
+/* ---------- Buscador ---------- */
+
+.empresas-pagina > .empresas-busqueda {
+    order: 4;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: min(100%, 365px);
+    margin: -1px 24px 0;
+    padding: 10px 13px;
+    border: 1px solid #2b4b62;
+    border-bottom: 0;
+    border-radius: 9px 9px 0 0;
+    background: #0d1d2d;
+    color: #7791a5;
+    z-index: 2;
+}
+
+.empresas-pagina > .empresas-busqueda input {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #e5eef5;
+    font-size: 13px;
+}
+
+.empresas-pagina > .empresas-busqueda input::placeholder {
+    color: #6f879b;
+}
+
+/* ---------- Tabla de empresas ---------- */
+
+.empresas-pagina > .tabla-empresas-contenedor {
+    order: 5;
+    overflow-x: auto;
+    border-radius: 14px;
+}
+
+.empresas-pagina .tabla-empresas {
+    min-width: 900px;
+}
+
+.empresas-pagina .tabla-empresas th {
+    padding: 13px 16px;
+}
+
+.empresas-pagina .tabla-empresas td {
+    padding: 15px 16px;
+}
+
+/* ---------- Acciones de la tabla ---------- */
+
+.empresas-pagina .acciones-empresa button {
+    width: 36px;
+    height: 34px;
+    min-height: 34px;
+    padding: 7px;
+    border: 1px solid #2c6d8f;
+    border-radius: 7px;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.empresas-pagina .acciones-empresa button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px #06152266;
+}
+
+/* Editar */
+
+.empresas-pagina .btn-editar-empresa {
+    background: #173f59;
+    color: #77caf0;
+}
+
+.empresas-pagina .btn-editar-empresa:hover {
+    border-color: #3d9dcc;
+    background: #205675;
+}
+
+/* Desactivar */
+
+.empresas-pagina .btn-desactivar-empresa {
+    background: #512d38;
+    color: #ffabb1;
+}
+
+.empresas-pagina .btn-desactivar-empresa:hover {
+    background: #663642;
+}
+
+/* Activar */
+
+.empresas-pagina .btn-activar-empresa {
+    background: #164b3b;
+    color: #78dfa8;
+}
+
+.empresas-pagina .btn-activar-empresa:hover {
+    background: #1c604a;
+}
+
+/* ---------- Modal de empresas ---------- */
 
 .modal-fondo {
     position: fixed;
@@ -62,7 +211,7 @@ panel de trasportirsta .admin-contenido
     max-height: 90vh;
     overflow-y: auto;
     padding: 26px;
-    background: white;
+    background: #fff;
     border-radius: 14px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
 }
@@ -92,6 +241,8 @@ panel de trasportirsta .admin-contenido
     cursor: pointer;
 }
 
+/* ---------- Formulario de empresas ---------- */
+
 .formulario-empresa-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -101,6 +252,8 @@ panel de trasportirsta .admin-contenido
 .campo-completo {
     grid-column: 1 / -1;
 }
+
+/* ---------- Asignaciones ---------- */
 
 .asignacion-formulario {
     display: flex;
@@ -142,7 +295,38 @@ panel de trasportirsta .admin-contenido
     cursor: pointer;
 }
 
+/* =====================================================
+   DISEÑO RESPONSIVE
+   ===================================================== */
+
 @media (max-width: 700px) {
+
+    /* Resumen */
+
+    .empresas-pagina > .empresas-resumen {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    /* Buscador */
+
+    .empresas-pagina > .empresas-busqueda {
+        align-self: stretch;
+        width: auto;
+        margin: 0 0 -1px;
+        border-bottom: 1px solid #2b4b62;
+        border-radius: 9px;
+    }
+
+    /* Tabla */
+
+    .empresas-pagina > .tabla-empresas-contenedor {
+        border-radius: 0 0 14px 14px;
+    }
+
+    /* Formulario */
+
     .formulario-empresa-grid {
         grid-template-columns: 1fr;
     }
@@ -151,13 +335,10 @@ panel de trasportirsta .admin-contenido
         grid-column: auto;
     }
 
+    /* Asignaciones */
+
     .asignacion-formulario {
         align-items: stretch;
         flex-direction: column;
-    }
-
-    .empresas-resumen {
-        flex-direction: column;
-        gap: 6px;
     }
 }

@@ -4,9 +4,6 @@ import { Plus, Search, Building2, X, Pencil, Power,} from "lucide-react";
 import api from "../services/api";
 import AdminLayout from "../layouts/AdminLayout";
 import "../estilos/empresas.css";
-import "../estilos/crud-admin.css";
-import "../estilos/admin-modules.css";
-import "../estilos/empresas-page.css";
 
 function Empresas() {
     const [empresas, setEmpresas] = useState([]);

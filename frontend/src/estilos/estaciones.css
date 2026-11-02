@@ -1,0 +1,407 @@
+
+/* =====================================================
+   MÓDULO ESTACIONES DE SERVICIO
+   Tema oscuro corporativo
+===================================================== */
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+
+.resource-page {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 28px;
+    color: #e5eef5;
+    box-sizing: border-box;
+}
+
+/* ---------- ENCABEZADO ---------- */
+
+.resource-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.resource-heading h1 {
+    margin: 0;
+    color: #e5eef5;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.resource-heading p {
+    margin: 8px 0 0;
+    color: #8faabd;
+    font-size: 14px;
+}
+
+/* ---------- BOTÓN PRINCIPAL ---------- */
+
+.resource-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 40px;
+    padding: 0 17px;
+    border: 1px solid #286487;
+    border-radius: 8px;
+    background: #173f59;
+    color: #77caf0;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.resource-primary:hover {
+    background: #205371;
+    border-color: #77caf0;
+}
+
+.resource-primary:active {
+    transform: scale(0.98);
+}
+
+/* ---------- MENSAJE DE ERROR ---------- */
+
+.resource-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    border: 1px solid #75414b;
+    border-radius: 8px;
+    background: #512d38;
+    color: #ffabb1;
+    font-size: 13px;
+}
+
+/* ---------- CONTENEDOR DE TABLA ---------- */
+
+.resource-table {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #24465e;
+    border-radius: 12px;
+    background: #122638;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* ---------- TABLA ---------- */
+
+.resource-table table {
+    width: 100%;
+    min-width: 780px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.resource-table thead {
+    background: #172f45;
+}
+
+.resource-table th {
+    padding: 16px 18px;
+    border-bottom: 1px solid #2b4b62;
+    color: #8faabd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.resource-table td {
+    padding: 15px 18px;
+    border-bottom: 1px solid #203d52;
+    color: #d5e2eb;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.resource-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.resource-table tbody tr:hover {
+    background: #19364d;
+}
+
+.resource-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.resource-table td strong {
+    color: #77caf0;
+    font-weight: 700;
+}
+
+/* ---------- ESTADOS ---------- */
+
+.resource-active,
+.resource-inactive {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.resource-active {
+    border: 1px solid #286b50;
+    background: #164b3b;
+    color: #78dfa8;
+}
+
+.resource-inactive {
+    border: 1px solid #75414b;
+    background: #512d38;
+    color: #ffabb1;
+}
+
+/* ---------- BOTONES DE ACCIONES ---------- */
+
+.resource-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    margin-right: 6px;
+    padding: 0;
+    border: 1px solid #31536b;
+    border-radius: 7px;
+    background: #17354c;
+    color: #77caf0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resource-icon:hover {
+    border-color: #77caf0;
+    background: #205371;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.resource-icon:last-child {
+    margin-right: 0;
+}
+
+/* ---------- TABLA VACÍA ---------- */
+
+.resource-empty {
+    padding: 35px 20px !important;
+    color: #8faabd !important;
+    text-align: center;
+    font-size: 13px !important;
+}
+
+/* =====================================================
+   MODAL DE ESTACIONES
+===================================================== */
+
+/* ---------- FONDO DEL MODAL ---------- */
+
+.resource-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 12, 21, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+/* ---------- VENTANA DEL MODAL ---------- */
+
+.resource-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 30px;
+    border: 1px solid #2b4b62;
+    border-radius: 14px;
+    background: #122638;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    box-sizing: border-box;
+    animation: estaciones-modal-entrada 0.2s ease;
+}
+
+@keyframes estaciones-modal-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- TÍTULO DEL MODAL ---------- */
+
+.resource-dialog h2 {
+    margin: 0 35px 25px 0;
+    color: #e5eef5;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* ---------- BOTÓN CERRAR ---------- */
+
+.resource-close {
+    position: absolute;
+    top: 19px;
+    right: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    border: 1px solid #31536b;
+    border-radius: 7px;
+    background: #17354c;
+    color: #8faabd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resource-close:hover {
+    border-color: #ffabb1;
+    background: #512d38;
+    color: #ffabb1;
+}
+
+/* ---------- CAMPOS DEL FORMULARIO ---------- */
+
+.resource-dialog label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: #b9cbd8;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.resource-dialog input {
+    width: 100%;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid #31536b;
+    border-radius: 7px;
+    outline: none;
+    background: #0d1d2d;
+    color: #e5eef5;
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resource-dialog input::placeholder {
+    color: #668398;
+}
+
+.resource-dialog input:focus {
+    border-color: #77caf0;
+    box-shadow: 0 0 0 3px rgba(119, 202, 240, 0.12);
+}
+
+/* ---------- BOTÓN GUARDAR ---------- */
+
+.resource-dialog > .resource-primary {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* ---------- SCROLL DEL MODAL ---------- */
+
+.resource-dialog::-webkit-scrollbar,
+.resource-table::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.resource-dialog::-webkit-scrollbar-track,
+.resource-table::-webkit-scrollbar-track {
+    background: #0d1d2d;
+}
+
+.resource-dialog::-webkit-scrollbar-thumb,
+.resource-table::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #31536b;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+    .resource-page {
+        padding: 20px 15px;
+    }
+
+    .resource-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .resource-heading h1 {
+        font-size: 21px;
+    }
+
+    .resource-primary {
+        min-height: 39px;
+    }
+
+    .resource-dialog {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-page {
+        padding: 16px 10px;
+    }
+
+    .resource-heading h1 {
+        font-size: 19px;
+    }
+
+    .resource-heading p {
+        font-size: 12px;
+    }
+
+    .resource-modal {
+        padding: 12px;
+    }
+
+    .resource-dialog {
+        padding: 24px 17px;
+    }
+
+    .resource-dialog h2 {
+        font-size: 18px;
+    }
+}

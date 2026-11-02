@@ -1,337 +1,747 @@
-/* DISEÑO DE EMRESAS DEL AADMIN */
 
-/* ==============================
-   MÓDULO EMPRESAS
-============================== */
+/* =====================================================
+   MÓDULO EMPRESAS - TEMA OSCURO CORPORATIVO
+   React + Vite
+   ===================================================== */
 
-.empresas-pagina {
-    width: 100%;
+
+/* =====================================================
+   1. VARIABLES DE DISEÑO
+   ===================================================== */
+
+:root {
+    --emp-fondo: #0d1d2d;
+    --emp-fondo-secundario: #122638;
+    --emp-tarjeta: #172f45;
+    --emp-tarjeta-hover: #183149;
+
+    --emp-borde: #24465e;
+    --emp-borde-input: #2b4b62;
+
+    --emp-texto: #e5eef5;
+    --emp-texto-secundario: #8faabd;
+    --emp-texto-suave: #718096;
+
+    --emp-azul: #77caf0;
+    --emp-azul-fondo: #173f59;
+
+    --emp-verde: #78dfa8;
+    --emp-verde-fondo: #164b3b;
+
+    --emp-rojo: #ffabb1;
+    --emp-rojo-fondo: #512d38;
+
+    --emp-sombra: 0 8px 22px #06152255;
+    --emp-radio: 13px;
 }
 
-.empresas-encabezado {
+
+/* =====================================================
+   2. PÁGINA PRINCIPAL
+   ===================================================== */
+
+.empresas-pagina {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   3. ENCABEZADO
+   ===================================================== */
+
+.empresas-pagina > .empresas-encabezado {
+    order: 1;
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 28px;
+    gap: 24px;
+    margin: 0 0 26px;
 }
 
 .empresas-encabezado h1 {
-    color: #142b49;
-    font-size: 27px;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
+    color: #f1f5f9;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .empresas-encabezado p {
-    color: #748195;
+    margin: 0;
+    color: var(--emp-texto-secundario);
     font-size: 14px;
+    line-height: 1.5;
 }
 
+
+/* =====================================================
+   4. BOTÓN NUEVA EMPRESA
+   ===================================================== */
+
 .btn-nueva-empresa {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 9px;
+
+    min-height: 43px;
     padding: 12px 18px;
-    background-color: #1769aa;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    font-size: 14px;
+    margin-left: auto;
+
+    border: 1px solid #2b9bd0;
+    border-radius: 9px;
+
+    background: linear-gradient(135deg, #1d8bc2, #166a9b);
+    box-shadow: 0 8px 20px #0d547533;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+
     cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .btn-nueva-empresa:hover {
-    background-color: #12558c;
+    background: linear-gradient(135deg, #2a9ed0, #1b7bad);
+    box-shadow: 0 10px 24px #0d547555;
+    transform: translateY(-1px);
 }
 
-.empresas-resumen {
+
+/* =====================================================
+   5. MENSAJES
+   ===================================================== */
+
+.empresas-pagina > .mensaje-empresa,
+.empresas-pagina > .mensaje-error {
+    order: 2;
+}
+
+.mensaje-empresa {
+    padding: 13px 16px;
+    margin-bottom: 20px;
+
+    border: 1px solid #27694f;
+    border-radius: 8px;
+
+    background: #164b3b;
+    color: var(--emp-verde);
+
+    font-size: 14px;
+}
+
+.mensaje-error {
     display: flex;
     align-items: center;
-    gap: 18px;
-    width: 240px;
-    padding: 22px;
-    margin-bottom: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    color: #1769aa;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 16px;
+    margin-bottom: 18px;
+
+    border: 1px solid #75404b;
+    border-radius: 8px;
+
+    background: #512d38;
+    color: var(--emp-rojo);
+
+    font-size: 14px;
+}
+
+.mensaje-error button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mensaje-cargando,
+.tabla-vacia {
+    padding: 25px;
+    text-align: center;
+    color: var(--emp-texto-secundario);
+}
+
+
+/* =====================================================
+   6. TARJETA DE RESUMEN
+   ===================================================== */
+
+.empresas-pagina > .empresas-resumen {
+    order: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 260px;
+    min-height: 94px;
+
+    padding: 19px 21px;
+    margin: 0 0 22px;
+
+    border: 1px solid var(--emp-borde);
+    border-radius: var(--emp-radio);
+
+    background: linear-gradient(
+        145deg,
+        #172f45,
+        #122638
+    );
+
+    box-shadow: var(--emp-sombra);
+
+    color: #55c4ed;
+}
+
+.empresas-resumen svg {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
 }
 
 .empresas-resumen span {
-    color: #748195;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--emp-texto-secundario);
     font-size: 12px;
 }
 
 .empresas-resumen h2 {
-    margin-top: 6px;
-    color: #142b49;
-    font-size: 25px;
+    margin: 0;
+    color: #f4f9fc;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1;
 }
 
-.empresas-tabla-contenedor {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+/* =====================================================
+   7. CONTENEDOR DE TABLA
+   ===================================================== */
+
+.empresas-pagina > .empresas-tabla-contenedor {
+    order: 4;
+
+    width: 100%;
+    padding: 0;
+
     overflow-x: auto;
+
+    border: 1px solid var(--emp-borde);
+    border-radius: 14px;
+
+    background: var(--emp-fondo-secundario);
+    box-shadow: 0 10px 28px #06152266;
 }
+
+
+/* =====================================================
+   8. ENCABEZADO DE TABLA
+   ===================================================== */
 
 .empresas-tabla-encabezado {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 22px;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 21px 24px;
+
+    border-bottom: 1px solid #213e55;
+
+    background: #142b40;
 }
 
 .empresas-tabla-encabezado h2 {
-    color: #142b49;
-    font-size: 18px;
+    margin: 0;
+
+    color: #e9f2f7;
+    font-size: 17px;
+    font-weight: 700;
 }
+
+
+/* =====================================================
+   9. BUSCADOR
+   ===================================================== */
 
 .buscador-empresas {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    width: min(100%, 340px);
     padding: 10px 13px;
-    border: 1px solid #dce2e9;
-    border-radius: 7px;
-    color: #748195;
+
+    border: 1px solid var(--emp-borde-input);
+    border-radius: 9px;
+
+    background: var(--emp-fondo);
+    color: #7791a5;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.buscador-empresas:focus-within {
+    border-color: #3d9dcc;
+    box-shadow: 0 0 0 3px #2b9bd022;
 }
 
 .buscador-empresas input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
     border: none;
     outline: none;
-    width: 230px;
+
+    background: transparent;
+    color: var(--emp-texto);
+
     font-size: 13px;
 }
 
+.buscador-empresas input::placeholder {
+    color: #6f879b;
+}
+
+
+/* =====================================================
+   10. TABLA
+   ===================================================== */
+
 .tabla-empresas {
     width: 100%;
+    min-width: 760px;
+
     border-collapse: collapse;
     text-align: left;
 }
 
 .tabla-empresas th {
-    padding: 15px 12px;
-    background-color: #f4f7fa;
-    color: #526176;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 13px 16px;
+
+    background: #102235;
+    color: #91aabd;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
 }
 
 .tabla-empresas td {
-    padding: 16px 12px;
-    border-bottom: 1px solid #edf0f4;
-    color: #526176;
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #21384c;
+
+    color: #bdd0dc;
     font-size: 13px;
 }
 
-.tabla-empresas tbody tr:hover {
-    background-color: #f8fafc;
+.tabla-empresas td:nth-child(2) {
+    color: #eaf5fa;
+    font-weight: 700;
 }
+
+.tabla-empresas tbody tr {
+    transition: background 0.2s ease;
+}
+
+.tabla-empresas tbody tr:hover {
+    background: var(--emp-tarjeta-hover);
+}
+
+.tabla-empresas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   11. ESTADOS DE EMPRESA
+   ===================================================== */
 
 .estado-activo,
 .estado-inactivo {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 6px 11px;
+
     border-radius: 20px;
+
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .estado-activo {
-    background-color: #e4f5eb;
-    color: #21834c;
+    background: #164b3b;
+    color: var(--emp-verde);
 }
 
 .estado-inactivo {
-    background-color: #fce8e8;
-    color: #b83b43;
+    background: #512d38;
+    color: var(--emp-rojo);
 }
 
-.mensaje-error {
-    padding: 15px;
-    color: #b83b43;
+
+/* =====================================================
+   12. ACCIONES DE EMPRESA
+   BOTONES SOLO CON ICONOS
+   ===================================================== */
+
+.acciones-empresa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
+
+/* Estilo general de los botones */
+
+.empresas-pagina .acciones-empresa button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 34px;
+    min-width: 36px;
+    min-height: 34px;
+
+    padding: 7px;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    /* Oculta el texto visual y conserva los iconos SVG */
+    font-size: 0;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Tamaño de iconos */
+
+.empresas-pagina .acciones-empresa button svg {
+    display: block;
+
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+}
+
+/* Efecto general */
+
+.empresas-pagina .acciones-empresa button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px #06152266;
+}
+
+/* EDITAR */
+
+.empresas-pagina .btn-editar-empresa {
+    border-color: #2c6d8f;
+    background: #173f59;
+    color: #77caf0;
+}
+
+.empresas-pagina .btn-editar-empresa:hover {
+    border-color: #3d9dcc;
+    background: #205675;
+}
+
+/* DESACTIVAR */
+
+.empresas-pagina .btn-desactivar-empresa {
+    border-color: #75404b;
+    background: #512d38;
+    color: #ffabb1;
+}
+
+.empresas-pagina .btn-desactivar-empresa:hover {
+    background: #663642;
+}
+
+/* ACTIVAR */
+
+.empresas-pagina .btn-activar-empresa {
+    border-color: #27694f;
+    background: #164b3b;
+    color: #78dfa8;
+}
+
+.empresas-pagina .btn-activar-empresa:hover {
+    background: #1c604a;
+}
+
+/* Accesibilidad */
+
+.empresas-pagina .acciones-empresa button:focus-visible {
+    outline: 2px solid #77caf0;
+    outline-offset: 3px;
+}
+
+.empresas-pagina .acciones-empresa button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   13. FORMULARIO DE EMPRESAS
+   ===================================================== */
+
+.formulario-empresa-contenedor {
+    order: 5;
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--emp-borde);
+    border-radius: 13px;
+    box-shadow: var(--emp-sombra);
+}
+
+.formulario-empresa {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* Título del formulario */
+
+.formulario-empresa-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.formulario-empresa-titulo h2 {
+    margin: 0;
+    color: #132f3f;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* Botón cerrar */
+
+.btn-cerrar-formulario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+    color: var(--emp-texto-secundario);
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+.btn-cerrar-formulario:hover {
+    background: #132b3f;
+    color: #ffffff;
+}
+
+
+/* Campos */
+
+.campo-empresa {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.campo-empresa label {
+    color: hsl(203, 42%, 30%);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo-empresa input {
+    box-sizing: border-box;
+    color: black;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 7px;
+}
+
+
+/* Acciones del formulario */
+
+.acciones-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 19px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.btn-cancelar {
+    border: 1px solid var(--emp-borde-input);
+
+    background: #172f45;
+    color: #bcd0dc;
+}
+
+.btn-cancelar:hover {
+    background: #213e55;
+}
+
+.btn-guardar {
+    border: 1px solid #2b9bd0;
+
+    background: #176d9e;
+    color: #ffffff;
+}
+
+.btn-guardar:hover {
+    background: #2186b9;
+    transform: translateY(-1px);
+}
+
+.btn-guardar:disabled,
+.btn-cancelar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   14. RESPONSIVE - TABLETS
+   ===================================================== */
 
 @media (max-width: 768px) {
+
     .empresas-encabezado,
     .empresas-tabla-encabezado {
         align-items: flex-start;
         flex-direction: column;
     }
 
-    .buscador-empresas,
-    .buscador-empresas input {
-        width: 100%;
-    }
-
     .empresas-resumen {
         width: 100%;
     }
+
+    .buscador-empresas {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .formulario-empresa {
+        max-width: 100%;
+    }
 }
 
 
-/* ==============================
-   FORMULARIO DE EMPRESAS
-============================== */
+/* =====================================================
+   15. RESPONSIVE - MÓVILES
+   ===================================================== */
 
-.mensaje-empresa {
-    padding: 13px 16px;
-    margin-bottom: 20px;
-    background-color: #e4f5eb;
-    color: #21834c;
-    border-radius: 7px;
-    font-size: 14px;
+@media (max-width: 700px) {
+
+    .empresas-pagina > .empresas-encabezado {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .empresas-pagina > .empresas-encabezado
+    > .btn-nueva-empresa {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .empresas-pagina > .empresas-resumen {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .empresas-pagina > .empresas-tabla-contenedor
+    > .empresas-tabla-encabezado {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .empresas-pagina .buscador-empresas {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .empresas-pagina .acciones-empresa {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .formulario-empresa-contenedor {
+        padding: 18px;
+    }
+
+    .acciones-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .acciones-formulario button {
+        width: 100%;
+    }
 }
 
-.formulario-empresa-contenedor {
-    margin-bottom: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 25px;
-}
-
-.formulario-empresa {
-    max-width: 700px;
-}
-
-.formulario-empresa-titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.formulario-empresa-titulo h2 {
-    color: #142b49;
-    font-size: 19px;
-}
-
-.btn-cerrar-formulario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    border: none;
-    background: transparent;
-    color: #748195;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-cerrar-formulario:hover {
-    background-color: #f0f2f5;
-    color: #142b49;
-}
-
-.campo-empresa {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    margin-bottom: 20px;
-}
-
-.campo-empresa label {
-    color: #526176;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.campo-empresa input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #dce2e9;
-    border-radius: 7px;
-    outline: none;
-    font-size: 14px;
-    color: #263445;
-    transition: 0.2s;
-}
-
-.campo-empresa input:focus {
-    border-color: #1769aa;
-    box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
-}
-
-.campo-empresa input::placeholder {
-    color: #a5afbd;
-}
-
-.acciones-formulario {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.btn-cancelar,
-.btn-guardar {
-    padding: 11px 19px;
-    border-radius: 7px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-cancelar {
-    background-color: white;
-    color: #526176;
-    border: 1px solid #dce2e9;
-}
-
-.btn-cancelar:hover {
-    background-color: #f3f5f9;
-}
-
-.btn-guardar {
-    background-color: #1769aa;
-    color: white;
-    border: none;
-}
-
-.btn-guardar:hover {
-    background-color: #12558c;
-}
-
-.btn-guardar:disabled,
-.btn-cancelar:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.acciones-empresa {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-desactivar-empresa,
-.btn-activar-empresa {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.btn-desactivar-empresa {
-    background: #fee2e2;
-    color: #b91c1c;
-}
-
-.btn-activar-empresa {
-    background: #dcfce7;
-    color: #15803d;
-}
-
-.btn-desactivar-empresa:hover,
-.btn-activar-empresa:hover {
-    opacity: 0.8;
-}

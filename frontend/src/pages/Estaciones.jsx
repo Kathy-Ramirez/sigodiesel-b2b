@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Pencil, Plus, Power, X } from "lucide-react";
 import api from "../services/api";
 import AdminLayout from "../layouts/AdminLayout";
-import "../estilos/admin-resource.css";
-import "../estilos/admin-modules.css";
+import "../estilos/estaciones.css";
 
 const inicial = { codigo: "", nombre_estacion: "", direccion: "", ciudad: "" };
 export default function Estaciones() {

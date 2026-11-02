@@ -5,7 +5,6 @@ import AdminLayout from "../layouts/AdminLayout";
 import api from "../services/api";
 import "../estilos/cupos.css";
 import "../estilos/admin-modules.css";
-import "../estilos/cupos.css"
 
 function obtenerFechaLocal() {
     const hoy = new Date();
