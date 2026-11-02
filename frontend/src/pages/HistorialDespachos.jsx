@@ -4,6 +4,7 @@ import { Search, Download, X, Fuel, CalendarDays, Ban, Eye,} from "lucide-react"
 
 import AdminLayout from "../layouts/AdminLayout";
 import api from "../services/api";
+import "../estilos/admin-modules.css";
 
 function formatearFecha(fecha) {
     if (!fecha) return "-";

@@ -4,6 +4,9 @@ import { Plus, Search, Building2, X, Pencil, Power,} from "lucide-react";
 import api from "../services/api";
 import AdminLayout from "../layouts/AdminLayout";
 import "../estilos/empresas.css";
+import "../estilos/crud-admin.css";
+import "../estilos/admin-modules.css";
+import "../estilos/empresas-page.css";
 
 function Empresas() {
     const [empresas, setEmpresas] = useState([]);
@@ -14,6 +17,7 @@ function Empresas() {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [guardando, setGuardando] = useState(false);
     const [mensaje, setMensaje] = useState("");
+    const [tipoMensaje, setTipoMensaje] = useState("success");
     const [empresaEditando, setEmpresaEditando] = useState(null);
 
     const [formulario, setFormulario] = useState({
@@ -30,6 +34,7 @@ function Empresas() {
             const respuesta = await api.get("/empresas");
             setEmpresas(respuesta.data.empresas);
         } catch (err) {
+            setTipoMensaje("error");
             setError(
                 err.response?.data?.error ||
                 "No se pudieron cargar las empresas."
@@ -94,6 +99,7 @@ function Empresas() {
             await cargarEmpresas();
 
         } catch (err) {
+            setTipoMensaje("error");
             setMensaje(
                 err.response?.data?.error ||
                 `No se pudo ${accion} la empresa.`
@@ -178,7 +184,7 @@ function Empresas() {
                 </div>
 
                 {mensaje && (
-                    <p className="mensaje-empresa">{mensaje}</p>
+                    <p className={`mensaje-empresa ${tipoMensaje === "error" ? "error" : ""}`} role="alert">{mensaje}</p>
                 )}
 
                 {mostrarFormulario && (

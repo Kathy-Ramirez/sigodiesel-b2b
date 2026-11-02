@@ -1,0 +1,16 @@
+import { useEffect, useState } from "react";
+import { Pencil, Plus, Power, X } from "lucide-react";
+import api from "../services/api";
+import AdminLayout from "../layouts/AdminLayout";
+import "../estilos/admin-resource.css";
+import "../estilos/admin-modules.css";
+
+const inicial = { codigo: "", nombre_estacion: "", direccion: "", ciudad: "" };
+export default function Estaciones() {
+    const [items, setItems] = useState([]); const [form, setForm] = useState(inicial); const [edit, setEdit] = useState(null); const [open, setOpen] = useState(false); const [error, setError] = useState("");
+    const cargar = async () => { try { const r = await api.get("/estaciones"); setItems(r.data.estaciones || []); } catch (e) { setError(e.response?.data?.error || "No se pudieron cargar las estaciones."); } };
+    useEffect(() => { cargar(); }, []);
+    const guardar = async e => { e.preventDefault(); try { if (edit) await api.patch(`/estaciones/${edit.id_estacion}`, form); else await api.post("/estaciones", form); setOpen(false); setEdit(null); setForm(inicial); cargar(); } catch (x) { setError(x.response?.data?.error || "No se pudo guardar la estación."); } };
+    const estado = async i => { try { await api.patch(`/estaciones/${i.id_estacion}/estado`, { activa: !i.activa }); cargar(); } catch (e) { setError(e.response?.data?.error || "No se pudo cambiar el estado."); } };
+    return <AdminLayout><div className="resource-page"><div className="resource-heading"><div><h1>Estaciones de servicio</h1><p>Administra los puntos habilitados para despachos.</p></div><button className="resource-primary" onClick={() => { setEdit(null); setForm(inicial); setOpen(true); }}><Plus size={17} /> Nueva estación</button></div>{error && <div className="resource-error">{error}</div>}<div className="resource-table"><table><thead><tr><th>Código</th><th>Nombre</th><th>Dirección</th><th>Ciudad</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>{items.map(i => <tr key={i.id_estacion}><td><strong>{i.codigo}</strong></td><td>{i.nombre_estacion}</td><td>{i.direccion || "-"}</td><td>{i.ciudad || "-"}</td><td><span className={i.activa ? "resource-active" : "resource-inactive"}>{i.activa ? "Activa" : "Inactiva"}</span></td><td><button className="resource-icon" onClick={() => { setEdit(i); setForm({ codigo: i.codigo, nombre_estacion: i.nombre_estacion, direccion: i.direccion || "", ciudad: i.ciudad || "" }); setOpen(true); }}><Pencil size={16} /></button><button className="resource-icon" onClick={() => estado(i)}><Power size={16} /></button></td></tr>)}{!items.length && <tr><td colSpan="6" className="resource-empty">No hay estaciones registradas.</td></tr>}</tbody></table></div></div>{open && <div className="resource-modal"><form className="resource-dialog" onSubmit={guardar}><button type="button" className="resource-close" onClick={() => setOpen(false)}><X /></button><h2>{edit ? "Editar estación" : "Registrar estación"}</h2>{Object.keys(inicial).map(k => <label key={k}>{k === "codigo" ? "Código *" : k === "nombre_estacion" ? "Nombre *" : k[0].toUpperCase() + k.slice(1)}<input required={k === "codigo" || k === "nombre_estacion"} value={form[k]} onChange={e => setForm({ ...form, [k]: e.target.value })} /></label>)}<button className="resource-primary">Guardar</button></form></div>}</AdminLayout>;
+}

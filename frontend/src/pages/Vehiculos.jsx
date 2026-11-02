@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { Search, Truck, Plus, X, Pencil, Power, } from "lucide-react";
 import api from "../services/api";
 import AdminLayout from "../layouts/AdminLayout";
+import "../estilos/empresas.css";
+import "../estilos/crud-admin.css";
+import "../estilos/vehiculos.css";
+import "../estilos/admin-modules.css";
 
 function Vehiculos() {
     const [vehiculos, setVehiculos] = useState([]);
@@ -10,6 +14,7 @@ function Vehiculos() {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [guardando, setGuardando] = useState(false);
     const [mensaje, setMensaje] = useState("");
+    const [tipoMensaje, setTipoMensaje] = useState("success");
 
     const [formulario, setFormulario] = useState({
         placa: "",
@@ -37,6 +42,7 @@ function Vehiculos() {
             setEmpresas(respuestaEmpresas.data.empresas);
 
         } catch (err) {
+            setTipoMensaje("error");
             setError(
                 err.response?.data?.error ||
                 "No se pudieron cargar los vehículos."
@@ -97,6 +103,7 @@ function Vehiculos() {
             await cargarDatos();
 
         } catch (err) {
+            setTipoMensaje("error");
             setMensaje(
                 err.response?.data?.error ||
                 "No se pudo registrar el vehículo."
@@ -208,7 +215,7 @@ function Vehiculos() {
 
 {/* FORMULARIO  */}
                 {mensaje && (
-                    <p className="mensaje-empresa">{mensaje}</p>
+                    <p className={`mensaje-empresa ${tipoMensaje === "error" ? "error" : ""}`} role="alert">{mensaje}</p>
                 )}
 
                 {mostrarFormulario && (

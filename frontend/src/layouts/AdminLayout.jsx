@@ -3,6 +3,8 @@ import { LayoutDashboard, Building2, Truck, Users, Fuel, ClipboardList, History,
     LogOut,} from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import "../estilos/admin-theme.css";
+import "../estilos/admin-modules.css";
 
 function AdminLayout({ children }) {
     const { usuario, cerrarSesion } = useAuth();
@@ -28,7 +30,7 @@ function AdminLayout({ children }) {
                 </div>
 
                 <nav className="sidebar-menu">
-                    <p className="menu-titulo">MENÚ PRINCIPAL</p>
+                    {/* <p className="menu-titulo">MENÚ PRINCIPAL</p> */}
 
                     {opcionesMenu.map((opcion) => {
                         const Icono = opcion.icono;

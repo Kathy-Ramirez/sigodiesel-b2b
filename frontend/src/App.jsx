@@ -8,6 +8,9 @@ import Empresas from "./pages/Empresas";
 import Transportistas from "./pages/Transportistas";
 import Cupos from "./pages/Cupos";
 import HistorialDespachos from "./pages/HistorialDespachos";
+import TransportistaPortal from "./pages/TransportistaPortal";
+import Estaciones from "./pages/Estaciones";
+import Usuarios from "./pages/Usuarios";
 
 function App() {
     const { autenticado, usuario } = useAuth();
@@ -16,9 +19,8 @@ function App() {
         return <Login />;
     }
 
-    if (usuario?.rol !== "ADMINISTRADOR") {
-        return <Login />;
-    }
+    if (usuario?.rol === "TRANSPORTISTA") return <TransportistaPortal />;
+    if (usuario?.rol !== "ADMINISTRADOR") return <Login />;
 
     return (
         <BrowserRouter>
@@ -29,6 +31,8 @@ function App() {
                 <Route path="/admin/transportistas" element={<Transportistas />}/>
                 <Route path="/admin/cupos" element={<Cupos />} />
                 <Route path="/admin/historial-despachos" element={<HistorialDespachos />}/>
+                <Route path="/admin/estaciones" element={<Estaciones />} />
+                <Route path="/admin/usuarios" element={<Usuarios />} />
 
                 <Route
                     path="*"

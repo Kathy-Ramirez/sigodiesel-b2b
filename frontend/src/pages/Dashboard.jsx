@@ -1,26 +1,14 @@
-
+import { useEffect, useState } from "react";
+import { Activity, Building2, Droplets, Fuel, Truck, Users } from "lucide-react";
 import AdminLayout from "../layouts/AdminLayout";
+import api from "../services/api";
+import "../estilos/dashboard.css";
 
+const inicioSemana = () => { const d = new Date(); const n = d.getDay() || 7; d.setDate(d.getDate() - n + 1); d.setHours(0, 0, 0, 0); return d; };
 function Dashboard() {
-    return (
-        <AdminLayout>
-            <div className="dashboard-header">
-                <h1>Panel administrativo</h1>
-                <p>
-                    Bienvenido al sistema de gestión SIGODIESEL B2B.
-                </p>
-            </div>
-
-            <div className="dashboard-contenido">
-                <h2>Resumen general</h2>
-                <p>
-                    Desde aquí podrás administrar las empresas,
-                    vehículos, transportistas, estaciones y cupos
-                    semanales.
-                </p>
-            </div>
-        </AdminLayout>
-    );
+    const [datos, setDatos] = useState({ empresas: 0, vehiculos: 0, transportistas: 0, despachos: 0, litros: 0, disponibles: 0 }); const [cargando, setCargando] = useState(true);
+    useEffect(() => { Promise.all([api.get("/empresas"), api.get("/vehiculos"), api.get("/usuarios"), api.get("/cupos"), api.get("/despachos/historial")]).then(([e, v, u, c, d]) => { const semana = inicioSemana(); const cupos = c.data || []; const actuales = cupos.filter(x => new Date(`${x.fecha_inicio}T00:00:00`) >= semana); const historial = d.data.historial || []; setDatos({ empresas: (e.data.empresas || []).filter(x => x.activa).length, vehiculos: (v.data.vehiculos || []).filter(x => x.activo).length, transportistas: (u.data.usuarios || []).filter(x => x.rol === "TRANSPORTISTA" && x.activo).length, despachos: historial.filter(x => new Date(x.fecha_hora) >= semana && x.estado === "REGISTRADA").length, litros: historial.filter(x => x.estado === "REGISTRADA" && new Date(x.fecha_hora) >= semana).reduce((a, x) => a + Number(x.litros_cargados || 0), 0), disponibles: actuales.reduce((a, x) => a + Number(x.litros_disponibles || 0), 0) }); }).catch(() => {}).finally(() => setCargando(false)); }, []);
+    const cards = [[Building2, "Empresas activas", datos.empresas, "blue"], [Truck, "Vehículos activos", datos.vehiculos, "cyan"], [Users, "Transportistas", datos.transportistas, "violet"], [Activity, "Despachos esta semana", datos.despachos, "amber"], [Fuel, "Litros despachados", `${datos.litros.toLocaleString("es-BO")} L`, "green"], [Droplets, "Saldo disponible", `${datos.disponibles.toLocaleString("es-BO")} L`, "teal"]];
+    return <AdminLayout><div className="dashboard-page"><div className="dashboard-header"><div><p className="dashboard-kicker">CENTRO DE CONTROL</p><h1>Panel administrativo</h1><p>Resumen operativo de SIGODIESEL B2B.</p></div><div className="dashboard-live"><span /> Datos en vivo</div></div><div className="dashboard-stats">{cards.map(([Icon, label, value, color]) => <article className={`dashboard-stat ${color}`} key={label}><div className="dashboard-stat-icon"><Icon size={21} /></div><div><span>{label}</span><strong>{cargando ? "—" : value}</strong></div></article>)}</div><section className="dashboard-welcome"><div><p className="dashboard-kicker">OPERACIÓN CENTRALIZADA</p><h2>Todo bajo control.</h2><p>Administra empresas, vehículos, asignaciones, cupos y despachos desde un único espacio.</p></div><div className="dashboard-welcome-mark"><Fuel size={64} /></div></section></div></AdminLayout>;
 }
-
 export default Dashboard;
