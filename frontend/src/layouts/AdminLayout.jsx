@@ -1,6 +1,6 @@
 
-import { LayoutDashboard, Building2, Truck, Users, Fuel, ClipboardList, History, UserCog, LogOut,} from "lucide-react";
-
+import { LayoutDashboard, Building2, Truck, Users, Fuel, ClipboardList, History, UserCog, 
+    LogOut,} from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -13,8 +13,7 @@ function AdminLayout({ children }) {
         { nombre: "Vehículos", ruta: "/admin/vehiculos", icono: Truck },
         { nombre: "Transportistas", ruta: "/admin/transportistas", icono: Users },
         { nombre: "Estaciones", ruta: "/admin/estaciones", icono: Fuel },
-        // { nombre: "Cupos semanales", ruta: "/admin/cupos", icono: ClipboardList },
-        { nombre: "Historial de despachos", ruta: "/admin/historial", icono: History },
+        { nombre: "Historial de despachos", ruta: "/admin/historial-despachos", icono: ClipboardList },
         { nombre: "Usuarios", ruta: "/admin/usuarios", icono: UserCog },
         { nombre: "Cupos semanales", ruta: "/admin/cupos", icono: Fuel,}
     ];

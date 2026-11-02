@@ -762,6 +762,27 @@ def obtener_historial_despachos():
             consulta = consulta.filter(
                 Vehiculo.placa.ilike(f"%{placa.strip()}%")
             )
+                
+        # Filtro por empresa.
+        id_empresa = request.args.get("id_empresa")
+
+        if id_empresa:
+            try:
+                id_empresa = int(id_empresa)
+            except (TypeError, ValueError):
+                return jsonify({
+                    "error": "id_empresa debe ser un número entero"
+                }), 400
+
+            if id_empresa <= 0:
+                return jsonify({
+                    "error": "id_empresa debe ser mayor a cero"
+                }), 400
+
+            consulta = consulta.filter(
+                Empresa.id_empresa == id_empresa
+            )
+
 
         # Filtro por estación.
         id_estacion = request.args.get("id_estacion")
@@ -953,6 +974,27 @@ def exportar_historial_csv():
             consulta = consulta.filter(
                 Vehiculo.placa.ilike(f"%{placa.strip()}%")
             )
+        
+        # Filtro por empresa.
+        id_empresa = request.args.get("id_empresa")
+
+        if id_empresa:
+            try:
+                id_empresa = int(id_empresa)
+            except (TypeError, ValueError):
+                return jsonify({
+                    "error": "id_empresa debe ser un número entero"
+                }), 400
+
+            if id_empresa <= 0:
+                return jsonify({
+                    "error": "id_empresa debe ser mayor a cero"
+                }), 400
+
+            consulta = consulta.filter(
+                Empresa.id_empresa == id_empresa
+            )
+
 
         # Filtro por estación.
         id_estacion = request.args.get("id_estacion")

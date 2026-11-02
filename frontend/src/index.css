@@ -338,8 +338,6 @@ panel de trasportirsta .admin-contenido
 
 
 
-
-
 .encabezado-modulo {
     display: flex;
     justify-content: space-between;
@@ -483,6 +481,114 @@ panel de trasportirsta .admin-contenido
         width: 100%;
     }
 
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
+}
+
+/* despachos */
+
+.estado-despacho {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.estado-registrada {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.estado-anulada {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.acciones-tabla {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.btn-accion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.btn-ver {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.btn-anular {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.btn-peligro {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background: #dc2626;
+    cursor: pointer;
+}
+
+.btn-peligro:hover {
+    background: #b91c1c;
+}
+
+.btn-peligro:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alerta-anulacion {
+    padding: 13px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #92400e;
+    background: #fef3c7;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.detalle-despacho {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detalle-despacho p {
+    margin: 0;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-wrap: anywhere;
+}
+
+.modal-despacho {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.campo-completo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    resize: vertical;
+    font: inherit;
+}
+
+@media (max-width: 700px) {
     .tabla-contenedor {
         overflow-x: auto;
     }

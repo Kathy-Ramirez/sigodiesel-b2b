@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Empresas from "./pages/Empresas";
 import Transportistas from "./pages/Transportistas";
 import Cupos from "./pages/Cupos";
+import HistorialDespachos from "./pages/HistorialDespachos";
 
 function App() {
     const { autenticado, usuario } = useAuth();
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/admin/vehiculos" element={<Vehiculos />} />
                 <Route path="/admin/transportistas" element={<Transportistas />}/>
                 <Route path="/admin/cupos" element={<Cupos />} />
+                <Route path="/admin/historial-despachos" element={<HistorialDespachos />}/>
 
                 <Route
                     path="*"
