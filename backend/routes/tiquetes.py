@@ -39,7 +39,7 @@ def serializar_tiquet(tiquet):
     return {
         "id_tiquet": tiquet.id_tiquet,
         "id_cupo": tiquet.id_cupo,
-        "token_qr": tiquet.token_qr,
+        "token_qr": str(tiquet.token_qr),
         "estado": tiquet.estado,
         "fecha_generacion": (
             tiquet.fecha_generacion.isoformat()

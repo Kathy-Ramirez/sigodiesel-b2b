@@ -218,10 +218,7 @@ def listar_cupos_transportista():
         }), 400
 
     # 4. Obtener la semana actual en horario de Bolivia
-    hoy = date.today()  # Se reemplaza inmediatamente por fecha local Bolivia
-    hoy = date.today() if False else __import__("datetime").datetime.now(
-        ZONA_BOLIVIA
-    ).date()
+    hoy = datetime.now(ZONA_BOLIVIA).date()
 
     # hoy = datetime.now(ZONA_BOLIVIA).date()
     # inicio_semana = hoy - __import__("datetime").timedelta(days=hoy.weekday())
@@ -348,6 +345,17 @@ def consultar_tiquete_transportista(id_cupo):
             "mensaje": "Este cupo todavía no tiene un tiquete QR",
             "tiquete": None
         }), 200
+
+    # Un QR solo es válido dentro de la semana actual. Marcarlo como
+    # expirado al consultarlo evita mostrar un token que ya no puede usarse.
+    inicio_semana, fin_semana = semana_actual_bolivia()
+    if (
+        cupo.fecha_inicio != inicio_semana
+        or cupo.fecha_fin != fin_semana
+    ) and tiquete.estado == "VIGENTE":
+        tiquete.estado = "EXPIRADO"
+        tiquete.fecha_desactivacion = datetime.now(ZONA_BOLIVIA).replace(tzinfo=None)
+        db.session.commit()
 
     return jsonify({
         "mensaje": "Tiquete consultado correctamente",

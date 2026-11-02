@@ -24,6 +24,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 despachos_bp = Blueprint("despachos", __name__)
+ZONA_BOLIVIA = ZoneInfo("America/La_Paz")
 
 # import de ytascacion
 from sqlalchemy.exc import IntegrityError
@@ -101,7 +102,7 @@ def validar_qr(token_qr):
         }), 404
 
     # 6. Validar vigencia semanal
-    hoy = date.today()
+    hoy = datetime.now(ZONA_BOLIVIA).date()
 
     if hoy < cupo.fecha_inicio or hoy > cupo.fecha_fin:
         tiquete.estado = "EXPIRADO"
@@ -314,7 +315,7 @@ def registrar_despacho():
                 "error": "No se encontró el cupo semanal"
             }), 404
 
-        hoy = date.today()
+        hoy = datetime.now(ZONA_BOLIVIA).date()
 
         if hoy < cupo.fecha_inicio or hoy > cupo.fecha_fin:
             tiquete.estado = "EXPIRADO"
