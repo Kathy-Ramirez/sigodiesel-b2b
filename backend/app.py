@@ -14,6 +14,8 @@ CORS(
             "origins": [
                 "http://localhost:5173",
                 "http://127.0.0.1:5173",
+                "http://localhost:2841",
+                
             ]
         }
     },
@@ -91,5 +93,12 @@ def health_db():
         }), 503
 
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )

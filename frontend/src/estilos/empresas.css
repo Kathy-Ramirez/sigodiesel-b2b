@@ -10,28 +10,28 @@
    ===================================================== */
 
 :root {
-    --emp-fondo: #0d1d2d;
-    --emp-fondo-secundario: #122638;
-    --emp-tarjeta: #172f45;
-    --emp-tarjeta-hover: #183149;
+    --emp-fondo: var(--legacy-color-0d1d2d);
+    --emp-fondo-secundario: var(--legacy-color-122638);
+    --emp-tarjeta: var(--legacy-color-172f45);
+    --emp-tarjeta-hover: var(--legacy-color-183149);
 
-    --emp-borde: #24465e;
-    --emp-borde-input: #2b4b62;
+    --emp-borde: var(--legacy-color-24465e);
+    --emp-borde-input: var(--legacy-color-2b4b62);
 
-    --emp-texto: #e5eef5;
-    --emp-texto-secundario: #8faabd;
-    --emp-texto-suave: #718096;
+    --emp-texto: var(--legacy-color-e5eef5);
+    --emp-texto-secundario: var(--legacy-color-8faabd);
+    --emp-texto-suave: var(--legacy-color-718096);
 
-    --emp-azul: #77caf0;
-    --emp-azul-fondo: #173f59;
+    --emp-azul: var(--legacy-color-77caf0);
+    --emp-azul-fondo: var(--legacy-color-173f59);
 
-    --emp-verde: #78dfa8;
-    --emp-verde-fondo: #164b3b;
+    --emp-verde: var(--legacy-color-78dfa8);
+    --emp-verde-fondo: var(--legacy-color-164b3b);
 
-    --emp-rojo: #ffabb1;
-    --emp-rojo-fondo: #512d38;
+    --emp-rojo: var(--legacy-color-ffabb1);
+    --emp-rojo-fondo: var(--legacy-color-512d38);
 
-    --emp-sombra: 0 8px 22px #06152255;
+    --emp-sombra: 0 8px 22px var(--legacy-color-06152255);
     --emp-radio: 13px;
 }
 
@@ -64,7 +64,7 @@
 
 .empresas-encabezado h1 {
     margin: 0 0 8px;
-    color: #f1f5f9;
+    color: var(--legacy-color-f1f5f9);
     font-size: 30px;
     font-weight: 700;
 }
@@ -91,13 +91,13 @@
     padding: 12px 18px;
     margin-left: auto;
 
-    border: 1px solid #2b9bd0;
+    border: 1px solid var(--legacy-color-2b9bd0);
     border-radius: 9px;
 
-    background: linear-gradient(135deg, #1d8bc2, #166a9b);
-    box-shadow: 0 8px 20px #0d547533;
+    background: linear-gradient(135deg, var(--legacy-color-1d8bc2), var(--legacy-color-166a9b));
+    box-shadow: 0 8px 20px var(--legacy-color-0d547533);
 
-    color: #ffffff;
+    color: var(--legacy-color-ffffff);
     font-size: 13px;
     font-weight: 700;
 
@@ -111,8 +111,8 @@
 }
 
 .btn-nueva-empresa:hover {
-    background: linear-gradient(135deg, #2a9ed0, #1b7bad);
-    box-shadow: 0 10px 24px #0d547555;
+    background: linear-gradient(135deg, var(--legacy-color-2a9ed0), var(--legacy-color-1b7bad));
+    box-shadow: 0 10px 24px var(--legacy-color-0d547555);
     transform: translateY(-1px);
 }
 
@@ -130,10 +130,10 @@
     padding: 13px 16px;
     margin-bottom: 20px;
 
-    border: 1px solid #27694f;
+    border: 1px solid var(--legacy-color-27694f);
     border-radius: 8px;
 
-    background: #164b3b;
+    background: var(--legacy-color-164b3b);
     color: var(--emp-verde);
 
     font-size: 14px;
@@ -148,10 +148,10 @@
     padding: 12px 16px;
     margin-bottom: 18px;
 
-    border: 1px solid #75404b;
+    border: 1px solid var(--legacy-color-75404b);
     border-radius: 8px;
 
-    background: #512d38;
+    background: var(--legacy-color-512d38);
     color: var(--emp-rojo);
 
     font-size: 14px;
@@ -194,13 +194,13 @@
 
     background: linear-gradient(
         145deg,
-        #172f45,
-        #122638
+        var(--legacy-color-172f45),
+        var(--legacy-color-122638)
     );
 
     box-shadow: var(--emp-sombra);
 
-    color: #55c4ed;
+    color: var(--legacy-color-55c4ed);
 }
 
 .empresas-resumen svg {
@@ -218,7 +218,7 @@
 
 .empresas-resumen h2 {
     margin: 0;
-    color: #f4f9fc;
+    color: var(--legacy-color-f4f9fc);
     font-size: 27px;
     font-weight: 700;
     line-height: 1;
@@ -241,7 +241,7 @@
     border-radius: 14px;
 
     background: var(--emp-fondo-secundario);
-    box-shadow: 0 10px 28px #06152266;
+    box-shadow: 0 10px 28px var(--legacy-color-06152266);
 }
 
 
@@ -257,15 +257,15 @@
 
     padding: 21px 24px;
 
-    border-bottom: 1px solid #213e55;
+    border-bottom: 1px solid var(--legacy-color-213e55);
 
-    background: #142b40;
+    background: var(--legacy-color-142b40);
 }
 
 .empresas-tabla-encabezado h2 {
     margin: 0;
 
-    color: #e9f2f7;
+    color: var(--legacy-color-e9f2f7);
     font-size: 17px;
     font-weight: 700;
 }
@@ -287,15 +287,15 @@
     border-radius: 9px;
 
     background: var(--emp-fondo);
-    color: #7791a5;
+    color: var(--legacy-color-7791a5);
 
     transition: border-color 0.2s ease,
                 box-shadow 0.2s ease;
 }
 
 .buscador-empresas:focus-within {
-    border-color: #3d9dcc;
-    box-shadow: 0 0 0 3px #2b9bd022;
+    border-color: var(--legacy-color-3d9dcc);
+    box-shadow: 0 0 0 3px var(--legacy-color-2b9bd022);
 }
 
 .buscador-empresas input {
@@ -314,7 +314,7 @@
 }
 
 .buscador-empresas input::placeholder {
-    color: #6f879b;
+    color: var(--legacy-color-6f879b);
 }
 
 
@@ -333,8 +333,8 @@
 .tabla-empresas th {
     padding: 13px 16px;
 
-    background: #102235;
-    color: #91aabd;
+    background: var(--legacy-color-102235);
+    color: var(--legacy-color-91aabd);
 
     font-size: 11px;
     font-weight: 700;
@@ -347,14 +347,14 @@
 .tabla-empresas td {
     padding: 15px 16px;
 
-    border-bottom: 1px solid #21384c;
+    border-bottom: 1px solid var(--legacy-color-21384c);
 
-    color: #bdd0dc;
+    color: var(--legacy-color-bdd0dc);
     font-size: 13px;
 }
 
 .tabla-empresas td:nth-child(2) {
-    color: #eaf5fa;
+    color: var(--legacy-color-eaf5fa);
     font-weight: 700;
 }
 
@@ -391,12 +391,12 @@
 }
 
 .estado-activo {
-    background: #164b3b;
+    background: var(--legacy-color-164b3b);
     color: var(--emp-verde);
 }
 
 .estado-inactivo {
-    background: #512d38;
+    background: var(--legacy-color-512d38);
     color: var(--emp-rojo);
 }
 
@@ -457,50 +457,50 @@
 
 .empresas-pagina .acciones-empresa button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 5px 12px #06152266;
+    box-shadow: 0 5px 12px var(--legacy-color-06152266);
 }
 
 /* EDITAR */
 
 .empresas-pagina .btn-editar-empresa {
-    border-color: #2c6d8f;
-    background: #173f59;
-    color: #77caf0;
+    border-color: var(--legacy-color-2c6d8f);
+    background: var(--legacy-color-173f59);
+    color: var(--legacy-color-77caf0);
 }
 
 .empresas-pagina .btn-editar-empresa:hover {
-    border-color: #3d9dcc;
-    background: #205675;
+    border-color: var(--legacy-color-3d9dcc);
+    background: var(--legacy-color-205675);
 }
 
 /* DESACTIVAR */
 
 .empresas-pagina .btn-desactivar-empresa {
-    border-color: #75404b;
-    background: #512d38;
-    color: #ffabb1;
+    border-color: var(--legacy-color-75404b);
+    background: var(--legacy-color-512d38);
+    color: var(--legacy-color-ffabb1);
 }
 
 .empresas-pagina .btn-desactivar-empresa:hover {
-    background: #663642;
+    background: var(--legacy-color-663642);
 }
 
 /* ACTIVAR */
 
 .empresas-pagina .btn-activar-empresa {
-    border-color: #27694f;
-    background: #164b3b;
-    color: #78dfa8;
+    border-color: var(--legacy-color-27694f);
+    background: var(--legacy-color-164b3b);
+    color: var(--legacy-color-78dfa8);
 }
 
 .empresas-pagina .btn-activar-empresa:hover {
-    background: #1c604a;
+    background: var(--legacy-color-1c604a);
 }
 
 /* Accesibilidad */
 
 .empresas-pagina .acciones-empresa button:focus-visible {
-    outline: 2px solid #77caf0;
+    outline: 2px solid var(--legacy-color-77caf0);
     outline-offset: 3px;
 }
 
@@ -545,7 +545,7 @@
 
 .formulario-empresa-titulo h2 {
     margin: 0;
-    color: #132f3f;
+    color: var(--legacy-color-132f3f);
     font-size: 19px;
     font-weight: 700;
 }
@@ -573,8 +573,8 @@
 }
 
 .btn-cerrar-formulario:hover {
-    background: #132b3f;
-    color: #ffffff;
+    background: var(--legacy-color-132b3f);
+    color: var(--legacy-color-ffffff);
 }
 
 
@@ -589,14 +589,14 @@
 }
 
 .campo-empresa label {
-    color: hsl(203, 42%, 30%);
+    color: var(--legacy-color-label-blue);
     font-size: 13px;
     font-weight: 600;
 }
 
 .campo-empresa input {
     box-sizing: border-box;
-    color: black;
+    color: var(--legacy-color-000);
     width: 100%;
     padding: 12px 14px;
     border-radius: 7px;
@@ -639,23 +639,23 @@
 .btn-cancelar {
     border: 1px solid var(--emp-borde-input);
 
-    background: #172f45;
-    color: #bcd0dc;
+    background: var(--legacy-color-172f45);
+    color: var(--legacy-color-bcd0dc);
 }
 
 .btn-cancelar:hover {
-    background: #213e55;
+    background: var(--legacy-color-213e55);
 }
 
 .btn-guardar {
-    border: 1px solid #2b9bd0;
+    border: 1px solid var(--legacy-color-2b9bd0);
 
-    background: #176d9e;
-    color: #ffffff;
+    background: var(--legacy-color-176d9e);
+    color: var(--legacy-color-ffffff);
 }
 
 .btn-guardar:hover {
-    background: #2186b9;
+    background: var(--legacy-color-2186b9);
     transform: translateY(-1px);
 }
 
@@ -742,6 +742,65 @@
 
     .acciones-formulario button {
         width: 100%;
+    }
+}
+
+/* Formulario de registro y edición como modal */
+.admin-layout .empresas-pagina > .formulario-empresa-contenedor {
+    position: fixed;
+    z-index: 60;
+    inset: 0;
+    display: grid;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    place-items: center;
+    overflow-y: auto;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--color-overlay-medium);
+    box-shadow: none;
+    backdrop-filter: blur(5px);
+}
+
+.admin-layout .empresas-pagina .formulario-empresa {
+    width: min(100%, 520px);
+    max-width: 520px;
+    max-height: min(90vh, 780px);
+    overflow-y: auto;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: var(--color-card);
+    box-shadow: var(--shadow-lg);
+}
+
+.admin-layout .empresas-pagina .formulario-empresa-titulo {
+    margin-bottom: var(--space-5);
+}
+
+.admin-layout .empresas-pagina .formulario-empresa-titulo h2 {
+    color: var(--color-text);
+    font-size: var(--text-xl);
+}
+
+.admin-layout .empresas-pagina .formulario-empresa .campo-empresa {
+    min-width: 0;
+}
+
+@media (max-width: 520px) {
+    .admin-layout .empresas-pagina > .formulario-empresa-contenedor {
+        padding: var(--space-3);
+    }
+
+    .admin-layout .empresas-pagina .formulario-empresa {
+        width: 100%;
+        max-width: 520px;
+        max-height: 92vh;
+        padding: var(--space-4);
     }
 }
 

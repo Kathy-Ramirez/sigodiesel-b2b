@@ -1,141 +1,137 @@
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    min-width: 320px;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--legacy-color-f3f5f9);
+    color: var(--legacy-color-263445);
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3f5f9;
-    color: #263445;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
 .admin-layout {
     display: flex;
     min-height: 100vh;
+    background: var(--color-canvas);
+    color: var(--color-text);
 }
 
-/* MENÚ LATERAL */
 .sidebar {
-    width: 260px;
-    min-height: 100vh;
-    background-color: #142b49;
-    color: white;
-    display: flex;
-    flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    z-index: 20;
+    inset: 0 auto 0 0;
+    display: flex;
+    width: 254px;
+    min-height: 100vh;
+    flex-direction: column;
+    border-right: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
 }
 
 .sidebar-logo {
-    padding: 28px 22px;
-    border-bottom: 1px solid #30445e;
+    padding: var(--space-6) var(--space-5);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .sidebar-logo h2 {
-    font-size: 23px;
-    letter-spacing: 1px;
+    color: var(--color-text);
+    font-size: var(--text-xl);
+    letter-spacing: 0.04em;
 }
 
-.sidebar-logo span {
-    display: block;
-    margin-top: 6px;
-    font-size: 10px;
-    color: #a9bdd4;
-    letter-spacing: 2px;
+.sidebar-logo span,
+.menu-titulo {
+    color: var(--color-text-muted);
 }
 
 .sidebar-menu {
-    padding: 25px 14px;
     flex: 1;
     overflow-y: auto;
-}
-
-.menu-titulo {
-    font-size: 11px;
-    color: #91a7c0;
-    margin: 0 10px 15px;
-    font-weight: bold;
+    padding: var(--space-5) var(--space-3);
 }
 
 .menu-item {
     display: flex;
     align-items: center;
-    gap: 13px;
-    padding: 13px 12px;
-    margin-bottom: 5px;
-    border-radius: 7px;
-    cursor: pointer;
-    color: #d5dfeb;
-    font-size: 14px;
-    transition: 0.2s;
+    gap: var(--space-3);
+    margin-bottom: var(--space-1);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--motion-fast), background var(--motion-fast);
 }
 
 .menu-item:hover {
-    background-color: #24476d;
-    color: white;
+    background: var(--color-raised);
+    color: var(--color-text);
+}
+
+.menu-item-activo {
+    border-left: 3px solid var(--color-cyan);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-cyan) 14%, transparent), transparent 92%);
+    color: var(--color-text);
 }
 
 .sidebar-footer {
-    padding: 18px;
-    border-top: 1px solid #30445e;
-}
-
-.usuario-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 17px;
+    padding: var(--space-4);
+    border-top: 1px solid var(--color-border);
 }
 
 .usuario-info strong {
-    font-size: 14px;
+    color: var(--color-text);
 }
 
 .usuario-info span {
-    font-size: 12px;
-    color: #a9bdd4;
+    color: var(--color-text-muted);
 }
 
-.btn-cerrar-sesion {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: 11px;
-    background-color: #b83b43;
-    color: white;
-    border: none;
-    border-radius: 60px;
-    cursor: pointer;
-}
-
-.btn-cerrar-sesion:hover {
-    background-color: #982d35;
-}
-
-/* CONTENIDO PRINCIPAL */
 .admin-contenido {
-    margin-left: 260px;
-    width: calc(100% - 260px);
-    padding: 35px;
+    width: calc(100% - 254px);
+    min-height: 100vh;
+    margin-left: 254px;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
+    background: var(--color-canvas);
 }
 
-/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
 @media (max-width: 768px) {
     .sidebar {
-        width: 210px;
-        
+        width: 220px;
     }
 
     .admin-contenido {
-        margin-left: 210px;
-        width: calc(100% - 210px);
-        padding: 20px;
+        width: calc(100% - 220px);
+        margin-left: 220px;
+        padding: var(--space-5);
     }
 }
 
+@media (max-width: 560px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .admin-contenido {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+        padding: var(--space-4) var(--space-3);
+    }
+}

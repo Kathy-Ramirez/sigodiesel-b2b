@@ -1,6 +1,6 @@
 
 import { useEffect, useMemo, useState } from "react";
-import {Plus, Search, Pencil, Power, Truck, X, UserRound, Building2, ChevronDown} from "lucide-react";
+import {Plus, Search, Pencil, Power, Truck, X, Users, UserRoundCheck} from "lucide-react";
 import AdminLayout from "../layouts/AdminLayout";
 import api from "../services/api";
 import "../estilos/trasportistas.css";
@@ -249,7 +249,7 @@ function Transportistas() {
 
     return (
         <AdminLayout>
-            <div className="empresas-pagina">
+            <div className="empresas-pagina transportistas-pagina">
                 <div className="empresas-encabezado">
                     <div>
                         <h1>Transportistas</h1>
@@ -287,14 +287,20 @@ function Transportistas() {
                 </div>
 
                 <div className="empresas-resumen">
-                    <span>
-                        Total de transportistas: <strong>{transportistas.length}</strong>
-                    </span>
-                    <span>
-                        Activos: <strong>
-                            {transportistas.filter((t) => t.activo).length}
-                        </strong>
-                    </span>
+                    <article className="indicador-transportistas indicador-total">
+                        <span className="indicador-transportistas-icono"><Users size={21} /></span>
+                        <div>
+                            <strong>{transportistas.length}</strong>
+                            <span>Total de transportistas</span>
+                        </div>
+                    </article>
+                    <article className="indicador-transportistas indicador-activos">
+                        <span className="indicador-transportistas-icono"><UserRoundCheck size={21} /></span>
+                        <div>
+                            <strong>{transportistas.filter((t) => t.activo).length}</strong>
+                            <span>Transportistas activos</span>
+                        </div>
+                    </article>
                 </div>
 
                 <div className="tabla-empresas-contenedor">

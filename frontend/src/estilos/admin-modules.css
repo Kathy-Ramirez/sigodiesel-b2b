@@ -1,29 +1,29 @@
 /* Sistema visual compartido basado en la vista de Vehículos. */
 .empresas-pagina,.vehiculos-pagina,.pagina-empresas,.resource-page{max-width:1380px;margin:0 auto}
 .empresas-encabezado,.vehiculos-encabezado,.encabezado-modulo,.resource-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:26px}
-.empresas-encabezado h1,.vehiculos-encabezado h1,.encabezado-modulo h1,.resource-heading h1{margin:0 0 8px;font-size:30px;color:#f1f5f9}
-.empresas-encabezado p,.vehiculos-encabezado p,.encabezado-modulo p,.resource-heading p{margin:0;color:#8fa5b8;font-size:14px;line-height:1.5}
-.empresas-tabla-contenedor,.tabla-empresas-contenedor,.tabla-contenedor,.resource-table{border:1px solid #24465e;border-radius:14px;background:#122438;box-shadow:0 10px 28px #06152266;overflow:hidden}
-.empresas-tabla-encabezado{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:21px 24px;border-bottom:1px solid #213e55;background:#142b40}
-.empresas-tabla-encabezado h2{margin:0;color:#e9f2f7;font-size:17px}
-.buscador-empresas{width:min(100%,340px);background:#0d1d2d;border:1px solid #2b4b62;border-radius:9px;color:#7791a5}
-.buscador-empresas input{background:transparent;color:#e5eef5}
+.empresas-encabezado h1,.vehiculos-encabezado h1,.encabezado-modulo h1,.resource-heading h1{margin:0 0 8px;font-size:30px;color:var(--legacy-color-f1f5f9)}
+.empresas-encabezado p,.vehiculos-encabezado p,.encabezado-modulo p,.resource-heading p{margin:0;color:var(--legacy-color-8fa5b8);font-size:14px;line-height:1.5}
+.empresas-tabla-contenedor,.tabla-empresas-contenedor,.tabla-contenedor,.resource-table{border:1px solid var(--legacy-color-24465e);border-radius:14px;background:var(--legacy-color-122438);box-shadow:0 10px 28px var(--legacy-color-06152266);overflow:hidden}
+.empresas-tabla-encabezado{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:21px 24px;border-bottom:1px solid var(--legacy-color-213e55);background:var(--legacy-color-142b40)}
+.empresas-tabla-encabezado h2{margin:0;color:var(--legacy-color-e9f2f7);font-size:17px}
+.buscador-empresas{width:min(100%,340px);background:var(--legacy-color-0d1d2d);border:1px solid var(--legacy-color-2b4b62);border-radius:9px;color:var(--legacy-color-7791a5)}
+.buscador-empresas input{background:transparent;color:var(--legacy-color-e5eef5)}
 .tabla-empresas,.resource-table table{width:100%;min-width:760px;border-collapse:collapse}
-.tabla-empresas th,.resource-table th{padding:13px 16px;background:#102235;color:#91aabd;border-bottom:1px solid #244159;font-size:11px;letter-spacing:.04em;text-align:left;text-transform:uppercase}
-.tabla-empresas td,.resource-table td{padding:15px 16px;color:#bdd0dc;border-bottom:1px solid #203a50;font-size:13px}
-.tabla-empresas tbody tr:hover,.resource-table tbody tr:hover{background:#183149}
+.tabla-empresas th,.resource-table th{padding:13px 16px;background:var(--legacy-color-102235);color:var(--legacy-color-91aabd);border-bottom:1px solid var(--legacy-color-244159);font-size:11px;letter-spacing:.04em;text-align:left;text-transform:uppercase}
+.tabla-empresas td,.resource-table td{padding:15px 16px;color:var(--legacy-color-bdd0dc);border-bottom:1px solid var(--legacy-color-203a50);font-size:13px}
+.tabla-empresas tbody tr:hover,.resource-table tbody tr:hover{background:var(--legacy-color-183149)}
 .acciones-empresa{display:flex;align-items:center;gap:7px}
-.acciones-empresa button,.resource-icon{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:33px;padding:7px 10px;border:1px solid #2c6d8f;border-radius:7px;background:#173f59;color:#77caf0;font-size:11px;font-weight:700;white-space:nowrap;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.acciones-empresa button:hover,.resource-icon:hover{border-color:#3d9dcc;background:#205675;box-shadow:0 5px 12px #06152266;transform:translateY(-1px)}
-.btn-desactivar-empresa{border-color:#75404b!important;background:#512d38!important;color:#ffabb1!important}.btn-activar-empresa{border-color:#28694f!important;background:#164b3b!important;color:#78dfa8!important}
-.empresas-resumen{border:1px solid #24465e;background:linear-gradient(145deg,#172f45,#122638);box-shadow:0 8px 22px #06152255;color:#55c4ed}
-.empresas-resumen span,.resumen-item span{color:#8faabd}.empresas-resumen h2,.resumen-item strong{color:#f4f9fc}
+.acciones-empresa button,.resource-icon{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:33px;padding:7px 10px;border:1px solid var(--legacy-color-2c6d8f);border-radius:7px;background:var(--legacy-color-173f59);color:var(--legacy-color-77caf0);font-size:11px;font-weight:700;white-space:nowrap;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.acciones-empresa button:hover,.resource-icon:hover{border-color:var(--legacy-color-3d9dcc);background:var(--legacy-color-205675);box-shadow:0 5px 12px var(--legacy-color-06152266);transform:translateY(-1px)}
+.btn-desactivar-empresa{border-color:var(--legacy-color-75404b)!important;background:var(--legacy-color-512d38)!important;color:var(--legacy-color-ffabb1)!important}.btn-activar-empresa{border-color:var(--legacy-color-28694f)!important;background:var(--legacy-color-164b3b)!important;color:var(--legacy-color-78dfa8)!important}
+.empresas-resumen{border:1px solid var(--legacy-color-24465e);background:linear-gradient(145deg,var(--legacy-color-172f45),var(--legacy-color-122638));box-shadow:0 8px 22px var(--legacy-color-06152255);color:var(--legacy-color-55c4ed)}
+.empresas-resumen span,.resumen-item span{color:var(--legacy-color-8faabd)}.empresas-resumen h2,.resumen-item strong{color:var(--legacy-color-f4f9fc)}
 /* Historial y cupos: ancho distribuido, sin el antiguo ancho fijo de 240px. */
 .pagina-empresas>.empresas-resumen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:16px;margin:0 0 22px;padding:0;background:transparent;border:0;box-shadow:none}
-.pagina-empresas>.empresas-resumen .resumen-item{display:flex;align-items:center;min-width:0;gap:14px;padding:20px;border:1px solid #24465e;border-radius:13px;background:linear-gradient(145deg,#172f45,#122638);box-shadow:0 8px 22px #06152255}
+.pagina-empresas>.empresas-resumen .resumen-item{display:flex;align-items:center;min-width:0;gap:14px;padding:20px;border:1px solid var(--legacy-color-24465e);border-radius:13px;background:linear-gradient(145deg,var(--legacy-color-172f45),var(--legacy-color-122638));box-shadow:0 8px 22px var(--legacy-color-06152255)}
 .pagina-empresas>.empresas-resumen .resumen-item>div{min-width:0}.pagina-empresas>.empresas-resumen .resumen-item span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pagina-empresas>.empresas-resumen .resumen-item strong{display:block;margin-top:6px;font-size:22px;white-space:nowrap}
 .resource-heading .resource-primary,.empresas-encabezado .btn-nueva-empresa,.vehiculos-encabezado .btn-nueva-empresa{margin-left:auto;white-space:nowrap}
-.resource-page .resource-table{overflow-x:auto}.resource-page .resource-dialog{background:#14283d}
-.mensaje-exito{border:1px solid #237258!important;background:#123e35!important;color:#7be1ac!important}.mensaje-error,.resource-error{border:1px solid #7a3d4a!important;background:#482936!important;color:#ffabb0!important}
+.resource-page .resource-table{overflow-x:auto}.resource-page .resource-dialog{background:var(--legacy-color-14283d)}
+.mensaje-exito{border:1px solid var(--legacy-color-237258)!important;background:var(--legacy-color-123e35)!important;color:var(--legacy-color-7be1ac)!important}.mensaje-error,.resource-error{border:1px solid var(--legacy-color-7a3d4a)!important;background:var(--legacy-color-482936)!important;color:var(--legacy-color-ffabb0)!important}
 @media(max-width:850px){.pagina-empresas>.empresas-resumen{grid-template-columns:repeat(3,minmax(180px,1fr));overflow-x:auto;padding-bottom:5px}.pagina-empresas>.empresas-resumen .resumen-item{min-width:180px}}
 @media(max-width:700px){.empresas-encabezado,.vehiculos-encabezado,.encabezado-modulo,.resource-heading{align-items:stretch;flex-direction:column}.empresas-encabezado .btn-nueva-empresa,.vehiculos-encabezado .btn-nueva-empresa,.resource-heading .resource-primary{width:100%;margin-left:0}.empresas-tabla-encabezado{align-items:stretch;flex-direction:column}.buscador-empresas{width:100%}.pagina-empresas>.empresas-resumen{grid-template-columns:1fr;overflow:visible}.pagina-empresas>.empresas-resumen .resumen-item{min-width:0}.acciones-empresa{align-items:stretch;flex-direction:column}.acciones-empresa button{width:100%}}

@@ -71,7 +71,13 @@ function TransportistaPortal() {
             <div className="portal-user"><span>{usuario?.nombre} {usuario?.apellido}</span><button onClick={cerrarSesion}><LogOut size={17} /> Salir</button></div>
         </header>
         <main className="portal-main">
-            <div className="portal-heading"><div><h1>Mi control de cupos</h1><p>Consulta tus vehículos y el consumo de la semana vigente.</p></div><button className="portal-refresh" onClick={cargar}><RefreshCw size={17} /> Actualizar</button></div>
+            <div className="portal-heading">
+                <div>
+                    <h1>Mi control de cupos</h1>
+                    <p>Consulta tus vehículos y el consumo de la semana vigente.</p></div>
+                    {/* <button className="portal-refresh" onClick={cargar}>
+                        <RefreshCw size={17} /> Actualizar</button> */}
+            </div>
             {error && <div className="portal-error">{error}<button onClick={() => setError("")}><X size={16} /></button></div>}
             <div className="portal-summary"><div><Truck /><span>Vehículos con cupo</span><strong>{cupos.length}</strong></div><div><Fuel /><span>Litros asignados</span><strong>{totales.asignados.toLocaleString("es-BO")} L</strong></div><div><ShieldCheck /><span>Disponibles</span><strong>{totales.disponibles.toLocaleString("es-BO")} L</strong></div></div>
             <div className="portal-tabs"><button className={tab === "cupos" ? "active" : ""} onClick={() => setTab("cupos")}><Fuel size={17} /> Cupos vigentes</button><button className={tab === "historial" ? "active" : ""} onClick={() => setTab("historial")}><History size={17} /> Mi historial</button></div>

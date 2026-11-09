@@ -36,7 +36,7 @@
 .vehiculos-encabezado h1 {
     margin: 0 0 8px;
 
-    color: #f1f5f9;
+    color: var(--legacy-color-f1f5f9);
     font-size: 30px;
     font-weight: 700;
 }
@@ -44,7 +44,7 @@
 .vehiculos-encabezado p {
     margin: 0;
 
-    color: #8fa5b8;
+    color: var(--legacy-color-8fa5b8);
     font-size: 14px;
     line-height: 1.5;
 }
@@ -67,18 +67,18 @@
     padding: 12px 18px;
     margin-left: auto;
 
-    border: 1px solid #2b9bd0;
+    border: 1px solid var(--legacy-color-2b9bd0);
     border-radius: 9px;
 
     background: linear-gradient(
         135deg,
-        #1d8bc2,
-        #166a9b
+        var(--legacy-color-1d8bc2),
+        var(--legacy-color-166a9b)
     );
 
-    box-shadow: 0 8px 20px #0d547533;
+    box-shadow: 0 8px 20px var(--legacy-color-0d547533);
 
-    color: #ffffff;
+    color: var(--legacy-color-ffffff);
     font-size: 13px;
     font-weight: 700;
 
@@ -94,11 +94,11 @@
 .vehiculos-encabezado > .btn-nueva-empresa:hover {
     background: linear-gradient(
         135deg,
-        #2a9ed0,
-        #1b7bad
+        var(--legacy-color-2a9ed0),
+        var(--legacy-color-1b7bad)
     );
 
-    box-shadow: 0 10px 24px #0d547555;
+    box-shadow: 0 10px 24px var(--legacy-color-0d547555);
     transform: translateY(-1px);
 }
 
@@ -118,18 +118,18 @@
     padding: 19px 21px;
     margin: 0 0 22px;
 
-    border: 1px solid #24465e;
+    border: 1px solid var(--legacy-color-24465e);
     border-radius: 13px;
 
     background: linear-gradient(
         145deg,
-        #172f45,
-        #122638
+        var(--legacy-color-172f45),
+        var(--legacy-color-122638)
     );
 
-    box-shadow: 0 8px 22px #06152255;
+    box-shadow: 0 8px 22px var(--legacy-color-06152255);
 
-    color: #55c4ed;
+    color: var(--legacy-color-55c4ed);
 }
 
 .vehiculos-pagina > .empresas-resumen svg {
@@ -140,14 +140,14 @@
     display: block;
     margin-bottom: 5px;
 
-    color: #8faabd;
+    color: var(--legacy-color-8faabd);
     font-size: 12px;
 }
 
 .vehiculos-pagina > .empresas-resumen h2 {
     margin: 0;
 
-    color: #f4f9fc;
+    color: var(--legacy-color-f4f9fc);
     font-size: 27px;
     line-height: 1;
 }
@@ -163,12 +163,12 @@
 
     overflow-x: auto;
 
-    border: 1px solid #24465e;
+    border: 1px solid var(--legacy-color-24465e);
     border-radius: 14px;
 
-    background: #122438;
+    background: var(--legacy-color-122438);
 
-    box-shadow: 0 10px 28px #06152266;
+    box-shadow: 0 10px 28px var(--legacy-color-06152266);
 }
 
 
@@ -185,15 +185,15 @@
 
     padding: 21px 24px;
 
-    border-bottom: 1px solid #213e55;
+    border-bottom: 1px solid var(--legacy-color-213e55);
 
-    background: #142b40;
+    background: var(--legacy-color-142b40);
 }
 
 .vehiculos-pagina .empresas-tabla-encabezado h2 {
     margin: 0;
 
-    color: #e9f2f7;
+    color: var(--legacy-color-e9f2f7);
     font-size: 17px;
     font-weight: 700;
 }
@@ -211,11 +211,11 @@
     width: min(100%, 340px);
     padding: 10px 13px;
 
-    border: 1px solid #2b4b62;
+    border: 1px solid var(--legacy-color-2b4b62);
     border-radius: 9px;
 
-    background: #0d1d2d;
-    color: #7791a5;
+    background: var(--legacy-color-0d1d2d);
+    color: var(--legacy-color-7791a5);
 
     transition:
         border-color 0.2s ease,
@@ -223,8 +223,8 @@
 }
 
 .vehiculos-pagina .buscador-empresas:focus-within {
-    border-color: #3d9dcc;
-    box-shadow: 0 0 0 3px #2b9bd022;
+    border-color: var(--legacy-color-3d9dcc);
+    box-shadow: 0 0 0 3px var(--legacy-color-2b9bd022);
 }
 
 .vehiculos-pagina .buscador-empresas input {
@@ -237,13 +237,13 @@
     outline: none;
 
     background: transparent;
-    color: #e5eef5;
+    color: var(--legacy-color-e5eef5);
 
     font-size: 13px;
 }
 
 .vehiculos-pagina .buscador-empresas input::placeholder {
-    color: #6f879b;
+    color: var(--legacy-color-6f879b);
 }
 
 
@@ -262,8 +262,8 @@
 .vehiculos-pagina .tabla-empresas th {
     padding: 13px 16px;
 
-    background: #102235;
-    color: #91aabd;
+    background: var(--legacy-color-102235);
+    color: var(--legacy-color-91aabd);
 
     font-size: 11px;
     font-weight: 700;
@@ -276,14 +276,14 @@
 .vehiculos-pagina .tabla-empresas td {
     padding: 15px 16px;
 
-    border-bottom: 1px solid #21384c;
+    border-bottom: 1px solid var(--legacy-color-21384c);
 
-    color: #bdd0dc;
+    color: var(--legacy-color-bdd0dc);
     font-size: 13px;
 }
 
 .vehiculos-pagina .tabla-empresas td:nth-child(2) {
-    color: #eaf5fa;
+    color: var(--legacy-color-eaf5fa);
     font-weight: 700;
 }
 
@@ -292,7 +292,7 @@
 }
 
 .vehiculos-pagina .tabla-empresas tbody tr:hover {
-    background: #183149;
+    background: var(--legacy-color-183149);
 }
 
 .vehiculos-pagina .tabla-empresas tbody tr:last-child td {
@@ -353,54 +353,54 @@
 
 .vehiculos-pagina .acciones-empresa button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 5px 12px #06152266;
+    box-shadow: 0 5px 12px var(--legacy-color-06152266);
 }
 
 
 /* EDITAR */
 
 .vehiculos-pagina .btn-editar-empresa {
-    border-color: #2c6d8f;
-    background: #173f59;
-    color: #77caf0;
+    border-color: var(--legacy-color-2c6d8f);
+    background: var(--legacy-color-173f59);
+    color: var(--legacy-color-77caf0);
 }
 
 .vehiculos-pagina .btn-editar-empresa:hover {
-    border-color: #3d9dcc;
-    background: #205675;
+    border-color: var(--legacy-color-3d9dcc);
+    background: var(--legacy-color-205675);
 }
 
 
 /* DESACTIVAR */
 
 .vehiculos-pagina .btn-desactivar-empresa {
-    border-color: #75404b;
-    background: #512d38;
-    color: #ffabb1;
+    border-color: var(--legacy-color-75404b);
+    background: var(--legacy-color-512d38);
+    color: var(--legacy-color-ffabb1);
 }
 
 .vehiculos-pagina .btn-desactivar-empresa:hover {
-    background: #663642;
+    background: var(--legacy-color-663642);
 }
 
 
 /* ACTIVAR */
 
 .vehiculos-pagina .btn-activar-empresa {
-    border-color: #28694f;
-    background: #164b3b;
-    color: #78dfa8;
+    border-color: var(--legacy-color-28694f);
+    background: var(--legacy-color-164b3b);
+    color: var(--legacy-color-78dfa8);
 }
 
 .vehiculos-pagina .btn-activar-empresa:hover {
-    background: #1c604a;
+    background: var(--legacy-color-1c604a);
 }
 
 
 /* Foco y accesibilidad */
 
 .vehiculos-pagina .acciones-empresa button:focus-visible {
-    outline: 2px solid #77caf0;
+    outline: 2px solid var(--legacy-color-77caf0);
     outline-offset: 3px;
 }
 
@@ -420,27 +420,27 @@
     padding: 13px 16px;
     margin-bottom: 20px;
 
-    border: 1px solid #27694f;
+    border: 1px solid var(--legacy-color-27694f);
     border-radius: 8px;
 
-    background: #164b3b;
-    color: #78dfa8;
+    background: var(--legacy-color-164b3b);
+    color: var(--legacy-color-78dfa8);
 }
 
 .mensaje-empresa.error {
-    border-color: #75404b;
-    background: #512d38;
-    color: #ffabb1;
+    border-color: var(--legacy-color-75404b);
+    background: var(--legacy-color-512d38);
+    color: var(--legacy-color-ffabb1);
 }
 
 .mensaje-error {
     padding: 12px 16px;
 
-    border: 1px solid #75404b;
+    border: 1px solid var(--legacy-color-75404b);
     border-radius: 8px;
 
-    background: #512d38;
-    color: #ffabb1;
+    background: var(--legacy-color-512d38);
+    color: var(--legacy-color-ffabb1);
 }
 
 
@@ -460,7 +460,7 @@
     padding: 24px;
     margin: 0;
 
-    background: #061522bb;
+    background: var(--legacy-color-061522bb);
 
     overflow-y: auto;
 }
@@ -473,12 +473,12 @@
 
     padding: 30px;
 
-    border: 1px solid #24465e;
+    border: 1px solid var(--legacy-color-24465e);
     border-radius: 16px;
 
-    background: #122638;
+    background: var(--legacy-color-122638);
 
-    box-shadow: 0 25px 70px #06152299;
+    box-shadow: 0 25px 70px var(--legacy-color-06152299);
 }
 
 .vehiculos-pagina .formulario-empresa-titulo {
@@ -486,7 +486,7 @@
 }
 
 .vehiculos-pagina .formulario-empresa-titulo h2 {
-    color: #e9f2f7;
+    color: var(--legacy-color-e9f2f7);
     font-size: 21px;
 }
 
@@ -514,18 +514,18 @@
     width: 100%;
     min-width: 0;
 
-    border: 1px solid #2b4b62;
+    border: 1px solid var(--legacy-color-2b4b62);
     border-radius: 7px;
 
-    background: #0d1d2d;
-    color: #e5eef5;
+    background: var(--legacy-color-0d1d2d);
+    color: var(--legacy-color-e5eef5);
 }
 
 .vehiculos-pagina .formulario-empresa input:focus,
 .vehiculos-pagina .formulario-empresa select:focus {
     outline: none;
-    border-color: #3d9dcc;
-    box-shadow: 0 0 0 3px #2b9bd022;
+    border-color: var(--legacy-color-3d9dcc);
+    box-shadow: 0 0 0 3px var(--legacy-color-2b9bd022);
 }
 
 
