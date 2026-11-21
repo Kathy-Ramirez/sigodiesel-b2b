@@ -19,9 +19,12 @@
 .empresas-resumen{border:1px solid var(--legacy-color-24465e);background:linear-gradient(145deg,var(--legacy-color-172f45),var(--legacy-color-122638));box-shadow:0 8px 22px var(--legacy-color-06152255);color:var(--legacy-color-55c4ed)}
 .empresas-resumen span,.resumen-item span{color:var(--legacy-color-8faabd)}.empresas-resumen h2,.resumen-item strong{color:var(--legacy-color-f4f9fc)}
 /* Historial y cupos: ancho distribuido, sin el antiguo ancho fijo de 240px. */
-.pagina-empresas>.empresas-resumen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:16px;margin:0 0 22px;padding:0;background:transparent;border:0;box-shadow:none}
+
+.pagina-empresas>.empresas-resumen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:10px;margin:0 0 2px;padding:0;background:transparent;border:0;box-shadow:none}
 .pagina-empresas>.empresas-resumen .resumen-item{display:flex;align-items:center;min-width:0;gap:14px;padding:20px;border:1px solid var(--legacy-color-24465e);border-radius:13px;background:linear-gradient(145deg,var(--legacy-color-172f45),var(--legacy-color-122638));box-shadow:0 8px 22px var(--legacy-color-06152255)}
 .pagina-empresas>.empresas-resumen .resumen-item>div{min-width:0}.pagina-empresas>.empresas-resumen .resumen-item span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pagina-empresas>.empresas-resumen .resumen-item strong{display:block;margin-top:6px;font-size:22px;white-space:nowrap}
+
+
 .resource-heading .resource-primary,.empresas-encabezado .btn-nueva-empresa,.vehiculos-encabezado .btn-nueva-empresa{margin-left:auto;white-space:nowrap}
 .resource-page .resource-table{overflow-x:auto}.resource-page .resource-dialog{background:var(--legacy-color-14283d)}
 .mensaje-exito{border:1px solid var(--legacy-color-237258)!important;background:var(--legacy-color-123e35)!important;color:var(--legacy-color-7be1ac)!important}.mensaje-error,.resource-error{border:1px solid var(--legacy-color-7a3d4a)!important;background:var(--legacy-color-482936)!important;color:var(--legacy-color-ffabb0)!important}

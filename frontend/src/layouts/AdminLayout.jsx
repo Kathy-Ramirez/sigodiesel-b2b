@@ -1,18 +1,5 @@
 import { useState } from "react";
-import {
-    Activity,
-    Building2,
-    ClipboardList,
-    Fuel,
-    LayoutDashboard,
-    LogOut,
-    Menu,
-    ShieldCheck,
-    Truck,
-    UserCog,
-    Users,
-    X,
-} from "lucide-react";
+import { Activity, Building2, ClipboardList, Fuel, LayoutDashboard, LogOut, Menu, ShieldCheck, Truck, UserCog, Users, X,} from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "../estilos/admin-theme.css";
@@ -25,13 +12,16 @@ function AdminLayout({ children }) {
 
     const opcionesMenu = [
         { nombre: "Inicio", ruta: "/admin", icono: LayoutDashboard },
+    
         { nombre: "Empresas", ruta: "/admin/empresas", icono: Building2 },
         { nombre: "Vehículos", ruta: "/admin/vehiculos", icono: Truck },
         { nombre: "Transportistas", ruta: "/admin/transportistas", icono: Users },
         { nombre: "Estaciones", ruta: "/admin/estaciones", icono: Fuel },
-        { nombre: "Historial de despachos", ruta: "/admin/historial-despachos", icono: ClipboardList },
+        // { nombre: "Historial de despachos", ruta: "/admin/historial-despachos", icono: ClipboardList },
         { nombre: "Usuarios", ruta: "/admin/usuarios", icono: UserCog },
         { nombre: "Cupos semanales", ruta: "/admin/cupos", icono: Activity },
+        { nombre: "Historial de despachos", ruta: "/admin/historial-despachos", icono: ClipboardList },
+
     ];
 
     const iniciales = [usuario?.nombre, usuario?.apellido]
